@@ -39,6 +39,7 @@
 		"vite-plugin-static-copy": "^0.13.0"
 	},
 	"dependencies": {
+		"@sveltejs/adapter-vercel": "^3.0.3",
 		"reveal.js": "^4.4.0"
 	},
 	"type": "module"
