@@ -15,7 +15,7 @@ const config = {
 		experimental: {
 			inspector: {
 				holdMode: true,
-				showToggleButton: 'always',
+				showToggleButton: 'auto', //always
 				toggleButtonPos: 'bottom-right'
 			}
 		}

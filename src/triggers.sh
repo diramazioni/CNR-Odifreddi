@@ -1,0 +1,1 @@
+find . -type d -name '*_* style' -exec sh -c 'echo "{}" | sed "s/\.\/[0-9]*_//;s/ style$//" >> triggers.txt' \;

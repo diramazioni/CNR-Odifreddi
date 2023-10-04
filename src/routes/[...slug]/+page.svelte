@@ -1,45 +1,108 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { Code, RevealJsContext, Slide } from '$lib';
-	import type Reveal from 'reveal.js';
+import { Code, Notes, RevealJsContext, Slide } from '$lib';
 
-	// The highlight plugin requires a stylesheet
-	import 'reveal.js/dist/theme/black.css';
-	import 'reveal.js/plugin/highlight/monokai.css';
+import UnoUno  from '../intro/1-1.svelte';
+import UnoDue  from '../intro/1-2.svelte';
+import UnoTre  from '../intro/1-3.svelte';
+import UnoQuatro  from '../intro/1-4.svelte';
 
-	let plugins: Reveal.PluginFunction[];
-
-	onMount(async () => {
-		plugins = [
-			await import('reveal.js/plugin/highlight/highlight').then(res => res.default),
-			await import('reveal.js/plugin/markdown/markdown').then(res => res.default)
-		]
-	})
+	const interval = 3000;
 </script>
-
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: 100vh; /* Set the container height to full viewport height */
+    }
+    
+    .box {
+        border: 1px solid #000;
+        box-sizing: border-box;
+        display: block; /* flex */
+        /* justify-content: center;
+        align-items: center; */
+        font-size: 24px;
+    }
+    .par {
+        font-size: xx-large;
+    }
+</style>
 <!-- a container with fixed size is required -->
-<div style:width="100%" style:height="100vh">
-	{#if plugins}
-	<RevealJsContext
-		options={{
-			controls: true,
-			progress: true,
-			center: true,
-			hash: true,
-			plugins
-		}}
-	>
-	<Slide>
-		<img src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
-		<h3>The reveal.js Svelte wrapper library</h3>
-	</Slide>
 
 	<Slide>
-		<h2>Hello There</h2>
-		<p>
-			reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-		</p>
+		<h2>
+			Arte e creatività 
+		</h2>
+		<h2>
+			nell'era dell'intelligenza artificiale
+		</h2>
+		<img class="r-frame"  
+		data-src="/sd/control-net/Odifreddi-spazio.png" alt="">
+		<p>Eli Spizzichino e Piergiorgio Oddifreddi </p>
+		<p class="par">
+			generative AI con le opere di Aldo Spizzichino
+		</p>	
 	</Slide>
+	<Slide>
+		<h2>
+			Cosè la generative AI? 
+		</h2>
+			<img class="r-frame fragment"  
+			data-src="/sd/control-net/Odifreddi-spazio.png" alt="">
+		
+		<aside class="notes">
+		</aside>		
+	</Slide>
+	<Slide>
+		<h2>
+			Cosè la creatività 
+		</h2>
+		<aside class="notes">
+		</aside>		
+
+	</Slide>		
+	<Slide>
+		<p class="par">
+			Aldo Spizzichino 
+		</p>
+		<div class="container" style="margin-top: -30px;">
+			<div class="box">
+				<UnoUno {interval}/>
+			</div>
+			<div class="box">
+				<UnoDue {interval}/>
+			</div>
+			<div class="box">
+				<UnoTre {interval}/>								
+			</div>
+			<div class="box">
+				<UnoQuatro {interval}/>
+			</div>
+		</div>
+		
+	</Slide>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<Slide>
 		<Slide>
@@ -168,23 +231,6 @@ function SecondExample() {
 		<p>
 			Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
 		</p>
-	</Slide>
-
-	<Slide markdown>
-		<script type="text/template">
-## Markdown support
-
-Write content using inline or external Markdown.
-Instructions and more info available in the [readme](https://revealjs.com/markdown/).
-
-```html []
-<Slide markdown>
-## Markdown support
-Write content using inline or external Markdown.
-Instructions and more info available in the [readme](https://revealjs.com/markdown/).
-</Slide>
-```
-		</script>
 	</Slide>
 
 	<Slide>
@@ -358,10 +404,10 @@ Instructions and more info available in the [readme](https://revealjs.com/markdo
 		<h2>Speaker View</h2>
 		<p>There's a <a href="https://revealjs.com/speaker-view/">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
 		<p>Press the <em>S</em> key to try it out.</p>
-
-		<aside class="notes">
+		<Notes>
 			Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-		</aside>
+		</Notes>
+
 	</Slide>
 
 	<Slide>
@@ -418,6 +464,3 @@ console.log( '"customevent" has fired' );
 			- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
 		</p>
 	</Slide>
-	</RevealJsContext>
-	{/if}
-</div>

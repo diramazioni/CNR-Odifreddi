@@ -18,7 +18,7 @@
 	export let trim: boolean | undefined = undefined;
 </script>
 
-<pre class:fragment data-auotslide={autoslide} data-id={id} data-fragment-index={fragmentIndex}>
+<pre class:fragment data-autoslide={autoslide} data-id={id} data-fragment-index={fragmentIndex}>
     <code
 		data-line-numbers={lineNumbers}
 		data-ln-start-from={lineStartFrom}
