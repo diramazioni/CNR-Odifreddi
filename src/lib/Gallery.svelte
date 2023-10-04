@@ -5,7 +5,7 @@
 	//import { onInterval } from './utils.js';
 
 	export let interval = 1000;
-  export let imagePath = [
+	export let imagePath = [
 		'https://picsum.photos/800/400?random=1',
 		'https://picsum.photos/800/400?random=2',
 		'https://picsum.photos/800/400?random=3'
@@ -121,7 +121,7 @@
 <!-- on:mouseenter={() => handleHover(true)} on:mouseleave={() => handleHover(false)} -->
 <div class="img_cont" on:keydown={handleKeyDown}>
 	{#each [imagePath[index]] as src (index)}
-	<img transition:fadeSlide="{{duration: 200, easing: sineOut}}" {src} alt="" on:click={focusImg} tabindex="0"/>	
+	<img transition:fadeSlide="{{duration: 200, easing: sineOut}}" {src} alt="" on:click={focusImg} tabindex="-1"/>	
 	<!-- slide={{duration: 100, easing: sineOut}} -->
 	{/each}
 </div>

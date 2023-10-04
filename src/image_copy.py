@@ -5,9 +5,9 @@ from PIL import Image
 
 suffix = "AldoSpizzichino"
 basewidth = 1024
-images = glob.glob('../static/src-img/*.jpg')
-images_cat = '../static/train-lora/img'
-dest_dir = "../static/train-lora-XL"
+images = glob.glob('/home/es/papa/computedart/content/galleries/all/*.jpg')
+images_cat = '/home/es/papa/Conferenze/ai/train-lora/img'
+dest_dir = "/home/es/data/prj/conferenze/CNR-Odifreddi/static/1024"
 
 
 def move():
@@ -68,4 +68,4 @@ def rename():
 
 
 resize()
-move()
+#move()

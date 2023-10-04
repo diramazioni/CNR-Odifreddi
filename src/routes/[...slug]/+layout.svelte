@@ -4,8 +4,6 @@
 	import type Reveal from 'reveal.js';
 
 	// The highlight plugin requires a stylesheet
-	import 'reveal.js/dist/theme/black.css';
-	import 'reveal.js/plugin/highlight/monokai.css';
 
 	
 	let plugins: Reveal.PluginFunction[];

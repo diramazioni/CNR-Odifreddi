@@ -1,6 +1,8 @@
 import adapter from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
+const dev = process.env.NODE_ENV === 'development';
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
@@ -8,14 +10,17 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		files: {
+			assets: dev ? './src/lib/assets' : './src/lib/assets' 
+		},		
 	},
 
 	vitePlugin: {
 		experimental: {
 			inspector: {
 				holdMode: true,
-				showToggleButton: 'auto', //always
+				showToggleButton: 'always', //always
 				toggleButtonPos: 'bottom-right'
 			}
 		}

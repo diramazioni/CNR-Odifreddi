@@ -1,5 +1,7 @@
 <script lang="ts">
 import { Code, Notes, RevealJsContext, Slide } from '$lib';
+import 'reveal.js/dist/theme/black.css';
+import 'reveal.js/plugin/highlight/monokai.css';
 
 import UnoUno  from '../intro/1-1.svelte';
 import UnoDue  from '../intro/1-2.svelte';
