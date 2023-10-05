@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Code, Notes, RevealJsContext, Slide } from '$lib';
+import { Frag, Imgfrag, Code, Notes, RevealJsContext, Slide } from '$lib';
 import 'reveal.js/dist/theme/black.css';
 import 'reveal.js/plugin/highlight/monokai.css';
 
@@ -8,7 +8,7 @@ import UnoDue  from '../intro/1-2.svelte';
 import UnoTre  from '../intro/1-3.svelte';
 import UnoQuatro  from '../intro/1-4.svelte';
 
-	const interval = 3000;
+const interval = 3000;
 </script>
 <style>
     .container {
@@ -48,23 +48,145 @@ import UnoQuatro  from '../intro/1-4.svelte';
 	</Slide>
 	<Slide>
 		<h2>
-			Cosè la generative AI? 
+			Generative AI? 
 		</h2>
-			<img class="r-frame fragment"  
-			data-src="/sd/control-net/Odifreddi-spazio.png" alt="">
-		
-		<aside class="notes">
-		</aside>		
+		<img class="r-frame fragment" data-src="/sd/control-net/Odifreddi-spazio.png" alt="">
+		<Notes>	
+			<p>Esempi con delle immagini diveretenti, e chiedere al pubblico quanti l'hanno provata</p>
+		</Notes>		
+
 	</Slide>
 	<Slide>
-		<h2>
-			Cosè la creatività 
-		</h2>
-		<aside class="notes">
-		</aside>		
+		<Slide>
+			<Frag>Io non sono creativo...</Frag>
+			<Imgfrag src="/2/casa-1.jpg"></Imgfrag>
+			<Notes>
 
+			<p>Arg: io non sono creativo... </p>
+			<p>Siamo sicuramente la specie più creativa, anche solo il fatto che ci troviamo qui e parliamo di queste cose dimostra la ns innata creatività (paragoni con altri animali)
+			</p>
+			<p>Spesso questa affermazione viene dal fatto, che non si hanno gli strumenti per esprimere la propria creatività, ma di base siamo tutti creativi, 
+				e vedremo come IA ha abbassato la bariera di entrata per molti che non si considerano creativi</p>
+		</Notes>		
+
+		</Slide>
+		<Slide>
+			<h2>Creatività per gli umani</h2>
+			<Notes>
+	<p>Viene da chiedersi qual'è il sw cognitivo in funzione nel ns cervello che assorbe le idee, le sminuzza e le processa continuamente creando nuove idee</p>
+	<p>mito left/right emisfero del cervello più razionale/più creativo. In realtà i neuroscienziati hanno visto che le persone più creative usano davvero entrambi gli emisferi del cervello</p>
+	<p>alcune parti, come il linguaggio è vero che sono concentrate nella parte SX, ma per la "creatività" è neccessario l'interazione di più parti del cervello per risolvere un determinato compito, 
+		quindi si parla di Rete Cerebrali. Ci sono diverse reti che interagiscono ma tre sono le fondamentali reti principali per la creatività per qualsiasi campo:</p>
+	<p>Executive attention network (plan mode), che permette di tenere più cose in testa contemporaneamete, una sorta di memoria di lavoro per creare strategie per ragiungere un obiettivo,
+		per non perdersi, o rifare il lavoro. Inoltre contribuisce ad inibire dare risposte ovvie, o scegliere strategie semplici che vengono in mente per prima.
+	</p>
+	<p>Imagination network (future mode): si attiva ogni volta che concentriamo l'attenzione su noi stessi, sui ns sogni ad occhi aperti, gli obiettivi futuri.
+		Inoltre è anche il centro della compassione, dove proviamo a metterci in ascolto verso l'altro, e ad aprirci vs nuove idee</p>
+	<p>Background attention network (filter mode): si attiva sottolineando le cose che sono interessanti per noi, e scartando quelle che non lo sono.
+		Essenzialmente è un filtro, prima ancora della fase immaginativa e certamente prima della fase esecutiva, la ns mente incosciamente filtra le info e le manda alle altre parti
+	</p>
+	<p>La ns corteccia è molto più estesa degli altri animali, e in particolare la parte pre-frontale, ci permette di simulare le possibilità degli eventi, di
+		separare noi stessi dalla situazione presente e proiettarci vs un futuro.
+	</p>
+
+	<p>Impariamo molto bene dagli altri, anche grazie al linguaggio, e questo ci mette davanti a tutte le altre specie, Però dobbiamo ammetere che i computer sono più efficenti, ma ne parliamo dopo</p>
+
+<p> Creatività richiede quindi grande conoscenza di quello che è successo prima e hanno fatto gli altri, e grande lungimiranza per pensare fuori dal gruppo.
+	Quello che possiamo creare è una evoluzione di quello che abbiamo già assorbito
+</p>
+<p>Se si confronta per esempio i musicisti o gli artisti visivi di diversi nazioni, nel passato (prima della globalizzazione/internet) 
+	ci si rende conto che sono fortemente influenzati dalla cultura del paese di origine,,, non è che un Ravi Shankar non fosse technicamente in grado di comporre un pezzo di Ennio Morricone, e viceversa,
+	ma semplicemente ognuno si porta dietro un bagaglio culturale e di conoscenza che è unico e specifico
+</p>
+<p>Il ns cervello continuamente cerca di confrontare e correlare le informazioni che gli arrivano, con quelle che già conosce: 
+	il famoso "confirmation bias", ossia cerchiamo prove per confermare quello che presumiamo sia già vero. Il ns cervello si sforza di mettere i nuovi input dentro a categorie già conosciute</p>
+<p>
+Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplificato degli algoritmi dei social network, i quali giocano proprio su questo per proporci contenuti che non ci fanno uscira dalla bolla</p>
+<p>vedi terrapiattisti, scientology, religioni, la nostra mente fa di tutto per evitare le incertezze, ma l'ironia è che è proprio lì che devi andare per pensare fuori dal coro ed essere creativo</p>
+<p>In sintesi si può dire che un creativo è in grado di farsi delle domande ed essere critico delle risposte</p>
+
+
+
+			</Notes>		
+		</Slide>
+	</Slide>		
+	
+	<Slide>
+		<h2>Creatività per l'AI</h2>
+		<h2>Analogie apprendimento animale e artificiale</h2>
+		<Notes>
+		<p>In un certo qual modo i meccanismi creativi dell'AI sono analoghi a quelli umani, (non a caso visto che per decenni le scienze cognitive hanno cercato di modellare i ns meccanismi di apprendimento)</p>
+		<p>Catturare parole chiave (filter) e cosa è associato ad esso (train), istruire un modello mentale (plan), e immaginare qualcosa di nuovo (future/inference)</p>
+		<p>I bambini sentono tante volte la parola cane e alla fine imparano e lo associano all'animale, o meglio imparano a riconosce le carrateristiche distintive che lo rendono cane e non un altro animale</p>
+		<p>Anche gli altri animali imparano, e come per le persone, più abbondanti sono gli stimoli e maggiore sarà lo sviluppo della corteccia cerebrale, tutavia le connessioni e le attivazioni del cervello umano sono molto più estese.</p>
+		<p>Tuttavia sappiamo ancora poco del cervello, e fare un confronto quantitativo sulla misura è sicuramente riduttivo</p>
+		</Notes>
+	</Slide>
+
+	<Slide>
+		<Slide>
+		<h2>Come si generano le immagini?</h2>
+		<p>E' una copia intelligente dei pixel? </p>
+		<Frag>Latent Space</Frag>
+		<Notes>
+		<p>Se chiediamo al publico di descrivere le caratteristiche di queste immagini nessuno avrebbe problemi, ma se fossero espressi in linguaggio binario nessuno saprebbe cosa sono</p>
+		<p>Viceversa il computer per codificare le carrateristiche che rendono unica questa immagine, deve tradurla in parametri (feature encoding)</p>
+		<p>Ognuna di queste features, una volta estratte, sono rappresentate da un vettore in uno spazio multidimensionale (latent space) e costituiscono l'input della rete neurale, 
+			insieme alla descrizione testuale creando così una associazione tra testo/(prompt), anch'esso diviso in token e vettorializzato, e immagine.</p>
+		<p>In questo spazio esite il cane, il gatto e tutte le variazioni intermedie, il prompt ci indica dove navigare in questi punti nel Latent Space, 
+			anche una piccola variazione nel prompt come una virgola, può proiettarci in un punto molto diverso del latent space rendendo il processo aleatorio</p>
+		</Notes>
 	</Slide>		
 	<Slide>
+			<h2> Ma cosa me ne faccio del Latent space</h2>
+			<Frag>Diffusion</Frag>
+			
+			<Notes>
+				<p>C'è poi l'operazione inversa, ossia trasformare questa rappresentazione matematica, di nuovo in una immagine fatta di pixel. Questo processo è chiamato Diffusion</p>
+				<p>Questo processo inizia con una immagine fatta di noise, e con una serie di interazioni, i pixel virano verso una composizione che ha senso per gli noi umani</p>
+
+			</Notes>
+		</Slide>		
+	</Slide>
+	<Slide>
+		<h2>Attention is all you need</h2>
+		<Frag>Transformer</Frag>
+		<p>2017 - Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin</p>
+
+	<Notes>
+		<p>Il titolo e il lavoro di questo paper, scritto da un gruppo di ricercatori Google nel 2017, rimarrà per sempre nella storia del ML</p>
+		<p>Fino a quel momento l'archittetura delle deep neural networks - reti neurali (CNN e RNN) era basato su un meccanismo puro encoder-decoder, 
+			loro hanno proposto un metodo più semplice basato sull'attenzione chiamato Trasformer</p>
+		<p>Questo ha permesso di incrementare in maniera massiva la quantità di dati per il training, permettendo così di comprendere a fondo le relazioni 
+			del linguaggio naturale e codificarlo in maniera efficente, </p>
+		<p>Grazie infatti a questi algoritmi, è stato possibile costruire dei grandi modelli del linguaggio (LLM) come OpenAI/ChatGPT, LLama, Falcon etc</p>	
+		<p>I Trasformer applicati alla generazione di immagini, ha permesso di rendere efficente l'operazione di apprendere da miliardi di immagini e capire DOVE prestare attenzione in una immagine
+			Distinguere per esempio qual'è il soggetto da uno sfondo, e come l'insieme di questi parametri costituiscono il concetto di cane</p>
+		<p>Le proprietà "con coda" e "con pelo" sono caratterestiche non sufficenti a descrivere univocamente un cane, 
+			trovare il minimo insieme che le descrive, dimenticando cioè che non è essenziale, differenziando il segnale dal noise, è stato reso possibile grazie ai Trasformers.</p>	
+	</Notes>
+	</Slide>
+	<Slide>
+	<h2>Problemi dell'AI: Specializzazione</h2>
+	<Notes>
+	<p> Tuttavia i modelli di AI/ML sono molto efficenti quando vengono istruiti per fare qualcosa di altamente specializzato, con compiti ristretti e ben definiti</p>
+	<p>Se si istruisce un modello per creare i paesaggi con migliaia di immagini, diventerà bravissimo a creare i paesaggi ma fallirà miserabilmente a creare un viso. </p>
+	<p>Stessa cosa dicasi per i sw  allenati a riconoscere tumori, non capiranno niente se gli si presenta una immagine di una mela</p>
+	<p>Il ns vantaggio competitivo (per ora) rispetto al'AI è proprio questa capacità enorme di generalizzare</p>
+	<p>Tuttavia conosciamo bene cosa porta una eccessiva specializzazione anche per le persone: magari bravissimi nel fare qualcosa ma con la mentalità ristretta per il resto</p>
+	</Notes>
+
+</Slide>
+<Slide>
+	<h2>Problemi dell'AI: Black box</h2>
+	<Notes>
+		<p>Una volta creato il modello, è una scatola chiusa che nessuno sa come funziona, perché dà certi risultati e quanto siano attendibili.</p>
+		<p>Però anche il ns cervello funziona così, pochi sanno cosa passa in testa a certa gente, e a volte ci sorprendiamo di noi stessi, e di come reagiamo di fronte a certe situazioni. </p>
+		<p>Siamo abituati a credere le ns azioni e decisioni siano frutto di un ragionamento, ma cosè il ragionamento se non la somma di tutti i bias/conoscenze passate? </p>
+	</Notes>
+</Slide>
+
+<Slide>
 		<p class="par">
 			Aldo Spizzichino 
 		</p>
@@ -82,15 +204,51 @@ import UnoQuatro  from '../intro/1-4.svelte';
 				<UnoQuatro {interval}/>
 			</div>
 		</div>
-		
+		<Notes>
+			<p>Per chi non cooscesse Aldo questi sono alcune immagini dei suoi lavori che poterete trovare anche qui esposte</p>
+			<p>Come potete notare ha uno stile difficilmente assimilabile agli altri artisti</p>
+			
+			<p>Introdurre i problemi di training</p>
+			<p>Far notare gli aspetti compositivi dell'arte di Aldo</p>
+		</Notes>
+			
 	</Slide>
 
+	<Slide>
+		<h2>Risultati ottenuti training </h2>
+	</Slide>
+	<Slide>
+		<h2>Risultati ottenuti training 2 </h2>
+	</Slide>
+	<Slide>
+		<h2>Control-net </h2>
+	</Slide>
+	<Slide>
+		<h2>Live demo </h2>
+	</Slide>
+
+	<Slide>
+		<h2>Opere derivate, copyrights e scioperi </h2>
+		<Notes>
+		<p> Esempi di artisti che hanno discusso sull'argomento James Guney etc </p>
+		<p>Stability.ai e litigation</p>
+		<p>Recenti scioperi ad Holywood</p>
+		<p>censorship</p>
+		<p>bias to white man</p>
+		</Notes>
+
+	</Slide>
+	
+
+
+<!--
 
 
 
+<p>Come si migliora la creatività?</p>
+<p>Blocco creativo, comfort zone. La società moderna è molto concentrata sulla visione che gli altri hanno su noi invece che focalizzare l'attenzione sulla ricerca interiore</p>
 
-
-
+-->
 
 
 
