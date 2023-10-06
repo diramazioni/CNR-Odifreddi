@@ -175,7 +175,7 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 		</ul>
 		
 		
-		<Img src="/3/chip-scale5.png" height={"60vh"} />
+		<Img src="/3/chip-scale5.png" height={"60vh"} class_=""/>
 		<br>
 		<q style="font-size: xx-large;">Abbiamo riscontrato che, in media, il cervello umano ha 86 miliardi di neuroni. E non uno dei cervelli che abbiamo esaminato finora raggiunge i 100 miliardi </q>
 		<q style="font-size: xx-large;">
