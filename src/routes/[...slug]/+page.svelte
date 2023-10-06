@@ -60,15 +60,29 @@ const interval = 5000;
 		<h2>
 			Di cosa si parlerà oggi
 		</h2>
-		<ul>
+		<p class="fragment">Prima parte</p>
+		<ul style="width: 100vh;">
 			<li class="fragment"> Cos'è la Generative AI</li>
 			<li class="fragment"> Creatività biologica</li>
 			<li class="fragment"> Analogie apprendimento animale e artificiale</li>
 			<li class="fragment"> Creatività biologica</li>
-			<li class="fragment"> Creatività artificiale (Come funzionano le Neural networks)</li>
+			<li class="fragment"> Creatività artificiale (come funzionano le Neural networks)</li>
 			<li class="fragment"> Criticità dei modelli di ML</li>
-
 		</ul>
+		<p class="fragment">Seconda parte</p>
+		<ul style="width: 100vh;">
+			<li class="fragment"> Le opere di Aldo Spizzichino</li>
+			<li class="fragment"> Copiare lo stile</li>
+			<li class="fragment"> Re-immaginare con quello stile</li>
+			<li class="fragment"> Live Demo</li>
+		</ul>
+		<p class="fragment">Terza parte</p>
+		<ul style="width: 100vh;">
+			<li class="fragment"> Come cambia il lavoro per gli artisti del presente</li>
+			<li class="fragment"> Opere derivate e copyrights</li>
+			<li class="fragment"> Conclusioni</li>
+		</ul>
+
 	</Slide>
 	<Slide>
 		<h2>
