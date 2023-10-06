@@ -89,13 +89,14 @@
 		display: grid;
 		justify-content: center;
   	align-items: center;
+	
   }	
 	:global(.img_abs) {
 		position: absolute;
 		top: 0;
 		left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,7 +115,8 @@
 		max-width: 800px;
     max-height: 400px;
 		grid-column: 1/2;
-		grid-row: 1/2		
+		grid-row: 1/2;
+		cursor: pointer;
 	}
 
 </style>

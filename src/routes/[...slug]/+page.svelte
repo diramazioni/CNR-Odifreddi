@@ -1,14 +1,16 @@
 <script lang="ts">
-import { Frag, Imgfrag, Code, Notes, RevealJsContext, Slide } from '$lib';
+import { Frag, Img, Imgfrag, Code, Notes, RevealJsContext, Slide } from '$lib';
 import 'reveal.js/dist/theme/black.css';
 import 'reveal.js/plugin/highlight/monokai.css';
 
-import UnoUno  from '../intro/1-1.svelte';
-import UnoDue  from '../intro/1-2.svelte';
-import UnoTre  from '../intro/1-3.svelte';
-import UnoQuatro  from '../intro/1-4.svelte';
+import UnoUno  from '../galleries/1-1.svelte';
+import UnoDue  from '../galleries/1-2.svelte';
+import UnoTre  from '../galleries/1-3.svelte';
+import UnoQuatro  from '../galleries/1-4.svelte';
+import DueUno  from '../galleries/2-1.svelte';
+import DueTre  from '../galleries/2-3.svelte';
 
-const interval = 3000;
+const interval = 5000;
 </script>
 <style>
     .container {
@@ -19,7 +21,7 @@ const interval = 3000;
     }
     
     .box {
-        border: 1px solid #000;
+        /* border: 1px solid #000; */
         box-sizing: border-box;
         display: block; /* flex */
         /* justify-content: center;
@@ -29,6 +31,12 @@ const interval = 3000;
     .par {
         font-size: xx-large;
     }
+		.green {
+			color: #43b719;
+		}
+		.yellow {
+			color: #b5b515;
+		}		
 </style>
 <!-- a container with fixed size is required -->
 
@@ -41,7 +49,7 @@ const interval = 3000;
 		</h2>
 		<img class="r-frame"  
 		data-src="/sd/control-net/Odifreddi-spazio.png" alt="">
-		<p>Eli Spizzichino e Piergiorgio Oddifreddi </p>
+		<p>Eli Spizzichino e Piergiorgio Odifreddi </p>
 		<p class="par">
 			generative AI con le opere di Aldo Spizzichino
 		</p>	
@@ -50,52 +58,95 @@ const interval = 3000;
 		<h2>
 			Generative AI? 
 		</h2>
-		<img class="r-frame fragment" data-src="/sd/control-net/Odifreddi-spazio.png" alt="">
+		<div class="container fragment" style="margin-top: -30px;">
+			<div class="box">
+				<p>Generazioni di immagini</p>
+				<Img src="/sd/control-net/Odifreddi-spazio.png" class_="" width="350px"/>
+			</div>
+			<div class="box">
+				<p>Generazioni di testo</p>
+				<p class="green">Perché i ricercatori scientifici sono bravi a fare feste?</p>
+				<p class="yellow">Perché sanno come mescolare bene le soluzioni!</p>
+				<br>
+				<p class="green">	Come si chiama il ricercatore che ha paura del buio?</p>
+				<p class="yellow">Un fotone!</p>
+				
+			</div>
+			<div class="box">
+				<p>Composizione di musica</p>
+				<p class="green">MuseNet improvises Chopin from Mozart’s Rondo alla Turca</p>
+				<audio controls data-autoplay src="/MuseNet.mp3"></audio>
+			</div>
+			<div class="box">
+				<p>e tanto altro ancora..</p>
+			</div>
+		</div>
+		
+		
 		<Notes>	
-			<p>Esempi con delle immagini diveretenti, e chiedere al pubblico quanti l'hanno provata</p>
+			<p>Esempi con delle immagini divertenti, e chiedere al pubblico quanti l'hanno provata</p>
+			<p>Spiegare le differenze applicazioni della Generative AI</p>
 		</Notes>		
 
 	</Slide>
 	<Slide>
+		<h2>Creatività per gli umani</h2>
 		<Slide>
 			<Frag>Io non sono creativo...</Frag>
-			<Imgfrag src="/2/casa-1.jpg"></Imgfrag>
+			<Imgfrag src="/2/casa-1.png" height="60vh"></Imgfrag>
 			<Notes>
 
 			<p>Arg: io non sono creativo... </p>
 			<p>Siamo sicuramente la specie più creativa, anche solo il fatto che ci troviamo qui e parliamo di queste cose dimostra la ns innata creatività (paragoni con altri animali)
 			</p>
 			<p>Spesso questa affermazione viene dal fatto, che non si hanno gli strumenti per esprimere la propria creatività, ma di base siamo tutti creativi, 
-				e vedremo come IA ha abbassato la bariera di entrata per molti che non si considerano creativi</p>
-		</Notes>		
+				e vedremo come IA ha abbassato la barriera di entrata per molti che non si considerano creativi</p>
 
+			</Notes>		
 		</Slide>
 		<Slide>
-			<h2>Creatività per gli umani</h2>
+			<DueUno interval={5000} />
 			<Notes>
 	<p>Viene da chiedersi qual'è il sw cognitivo in funzione nel ns cervello che assorbe le idee, le sminuzza e le processa continuamente creando nuove idee</p>
-	<p>mito left/right emisfero del cervello più razionale/più creativo. In realtà i neuroscienziati hanno visto che le persone più creative usano davvero entrambi gli emisferi del cervello</p>
-	<p>alcune parti, come il linguaggio è vero che sono concentrate nella parte SX, ma per la "creatività" è neccessario l'interazione di più parti del cervello per risolvere un determinato compito, 
-		quindi si parla di Rete Cerebrali. Ci sono diverse reti che interagiscono ma tre sono le fondamentali reti principali per la creatività per qualsiasi campo:</p>
-	<p>Executive attention network (plan mode), che permette di tenere più cose in testa contemporaneamete, una sorta di memoria di lavoro per creare strategie per ragiungere un obiettivo,
+	<p>Per molti anni, gli scienziati hanno cercato di capire questi meccanismi della mente, in quanto era evidente che  un moscerino era più capace di un computer digitale in certi compiti. Questo ha portato l'attenzione ad un problema architetturale: i programmi tradizionali processano i dati i maniera sequenziale, non c'è nessuna incertezza, ambiguità o capacità discrezionale</p>
+	<p>Il cervello degli animali, invece, anche lavorando a frequenze molto più lente, sono in grado di processare gli input in parallelo, e l'ambiguità è una caratteristica della capacità di calcolo</p>
+
+	<p>C'è poi il mito dell'emisfero destro/sinistro con una parte deputata al pensiero più razionale e l'altra più creativa. In realtà i neuroscienziati hanno visto che le persone più creative usano davvero entrambi gli emisferi del cervello</p>
+	<p>alcune parti, come il linguaggio è vero che sono concentrate nella parte SX, ma per la "creatività" è necessario l'interazione di più parti del cervello per risolvere un determinato compito, 	quindi si parla di Rete Cerebrali. 
+	</p>
+			</Notes>		
+		</Slide>
+		<Slide>
+		<p class="par">	reti coinvolte nel processo di creatività</p>
+			<Imgfrag src="/2/2/BRAIN-NET.png" width={"700px"}></Imgfrag>
+
+			<Notes>
+
+	<p>Ci sono tre reti principali che interagiscono nel processo di creatività, in qualsiasi campo lo si applichi, scienza, arte...:</p>
+	<p>Executive attention network (plan mode), ci permette di tenere più cose in testa contemporaneamente, una sorta di memoria di lavoro per creare strategie per raggiungere un obiettivo,
 		per non perdersi, o rifare il lavoro. Inoltre contribuisce ad inibire dare risposte ovvie, o scegliere strategie semplici che vengono in mente per prima.
 	</p>
 	<p>Imagination network (future mode): si attiva ogni volta che concentriamo l'attenzione su noi stessi, sui ns sogni ad occhi aperti, gli obiettivi futuri.
 		Inoltre è anche il centro della compassione, dove proviamo a metterci in ascolto verso l'altro, e ad aprirci vs nuove idee</p>
 	<p>Background attention network (filter mode): si attiva sottolineando le cose che sono interessanti per noi, e scartando quelle che non lo sono.
-		Essenzialmente è un filtro, prima ancora della fase immaginativa e certamente prima della fase esecutiva, la ns mente incosciamente filtra le info e le manda alle altre parti
+		Essenzialmente è un filtro, prima ancora della fase immaginativa e certamente prima della fase esecutiva, la ns mente inconsciamente filtra le info e le manda alle altre parti
 	</p>
 	<p>La ns corteccia è molto più estesa degli altri animali, e in particolare la parte pre-frontale, ci permette di simulare le possibilità degli eventi, di
 		separare noi stessi dalla situazione presente e proiettarci vs un futuro.
 	</p>
 
-	<p>Impariamo molto bene dagli altri, anche grazie al linguaggio, e questo ci mette davanti a tutte le altre specie, Però dobbiamo ammetere che i computer sono più efficenti, ma ne parliamo dopo</p>
-
+	<p>Impariamo molto bene dagli altri, anche grazie al linguaggio, e questo ci mette davanti a tutte le altre specie, Però dobbiamo ammetere che i computer sono più efficienti, ma ne parliamo dopo</p>
+</Notes>		
+</Slide>
+<Slide>
+	<h5>confirmation bias</h5>
+	<DueTre />
+	<Notes>
 <p> Creatività richiede quindi grande conoscenza di quello che è successo prima e hanno fatto gli altri, e grande lungimiranza per pensare fuori dal gruppo.
 	Quello che possiamo creare è una evoluzione di quello che abbiamo già assorbito
 </p>
-<p>Se si confronta per esempio i musicisti o gli artisti visivi di diversi nazioni, nel passato (prima della globalizzazione/internet) 
-	ci si rende conto che sono fortemente influenzati dalla cultura del paese di origine,,, non è che un Ravi Shankar non fosse technicamente in grado di comporre un pezzo di Ennio Morricone, e viceversa,
+<p>Se si confronta per esempio i musicisti o gli artisti visivi di diversi nazioni, nel passato (prima di internet) 
+	ci si rende conto che sono fortemente influenzati dalla cultura del paese di origine... non è che un Ravi Shankar non fosse tecnicamente in grado di comporre un pezzo di Ennio Morricone, e viceversa,
 	ma semplicemente ognuno si porta dietro un bagaglio culturale e di conoscenza che è unico e specifico
 </p>
 <p>Il ns cervello continuamente cerca di confrontare e correlare le informazioni che gli arrivano, con quelle che già conosce: 
@@ -107,39 +158,95 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 
 
 
-			</Notes>		
-		</Slide>
-	</Slide>		
-	
+		</Notes>		
+	</Slide>
+</Slide>		
+<Slide>
 	<Slide>
-		<h2>Creatività per l'AI</h2>
 		<h2>Analogie apprendimento animale e artificiale</h2>
+		<ul style="margin:70px;">
+			<li>Moscerino della frutta (Fruit Fly): 100 mila neuroni</li>
+			<li>Scarafaggio: Un milione di neuroni</li>
+			<li>Topo: 75 milioni di neuroni</li>
+			<li>Gatto: Un miliardo di neuroni</li>
+			<li>Scimpanzè: 7 miliardi di neuroni</li>
+			<li>Elefante: 23 miliardi di neuroni</li>
+			<li>Deep Learning chip: 2.6 trilioni on (7 nm scale)</li>
+		</ul>
+		
+		
+		<Img src="/3/chip-scale5.png" height={"60vh"} />
+		<br>
+		<q style="font-size: xx-large;">Abbiamo riscontrato che, in media, il cervello umano ha 86 miliardi di neuroni. E non uno dei cervelli che abbiamo esaminato finora raggiunge i 100 miliardi </q>
+		<q style="font-size: xx-large;">
+			Anche se può sembrare una piccola differenza la quantità di 14 miliardi di neuroni è praticamente il numero di neuroni presente in un cervello di babbuino o quasi la metà del numero di neuroni nel cervello di gorilla. Ecco, questa differenza in realtà è abbastanza grande
+		</q>
+		<i style="font-size: large;">Dr.ssa Suzana Herculano-Houze</i>
+
 		<Notes>
-		<p>In un certo qual modo i meccanismi creativi dell'AI sono analoghi a quelli umani, (non a caso visto che per decenni le scienze cognitive hanno cercato di modellare i ns meccanismi di apprendimento)</p>
-		<p>Catturare parole chiave (filter) e cosa è associato ad esso (train), istruire un modello mentale (plan), e immaginare qualcosa di nuovo (future/inference)</p>
-		<p>I bambini sentono tante volte la parola cane e alla fine imparano e lo associano all'animale, o meglio imparano a riconosce le carrateristiche distintive che lo rendono cane e non un altro animale</p>
-		<p>Anche gli altri animali imparano, e come per le persone, più abbondanti sono gli stimoli e maggiore sarà lo sviluppo della corteccia cerebrale, tutavia le connessioni e le attivazioni del cervello umano sono molto più estese.</p>
-		<p>Tuttavia sappiamo ancora poco del cervello, e fare un confronto quantitativo sulla misura è sicuramente riduttivo</p>
+		<p>L'unità di base per il cervello biologico è il neurone. Il loro compito
+			è quello di trasmettere l'impulso elettrico dall'assone ai punti più terminali. Questo è come il ns corpo percepisce la luce, lo stimolo della pressione del tatto, il calore e via dicendo. I segnali dei neuroni specializzati vengono trasmessi dal ns sistema nervoso al cervello composto anch'esso di miliardi di neuroni intercomunicanti, creando una rete. </p>
+		<p>
+			Ma quanti sono? I ricercatori hanno recentemente stimato in 86 miliardi il num di neuroni, che certo è minore dei 200/400 miliardi di stelle nella via Lattea ma comunque è un bel numero.
+			Nel cervelletto è concentrata più della metà, quindi anche la densità non è omogenea
+		</p>
+		<p>L'unità computazionale di base per i computer sono i transistor. Più che il numero, ha senso parlare della densità raggiunta, comunque quest'anno, un processore di deep learning ha montato 2.6 trilioni di transistor in un singolo chip</p>
+		<p>L'unità computazionale di base per le reti neurali, anch'esso è chiamato neurone. 
+			Riceve input da qualche altro nodo o da fonti esterne e genera un output</p>
+		<p>In una rete biologica il segnale elettrico è catturato dai dendriti. Essi combinandosi formano insieme un segnale più forte. Se il segnale è sufficientemente forte il neurone manda l'impulso attraverso l'assone verso i terminali che passa il segnale ai dendriti del neurone successivo. E' importante notare che il segnale d'entrata arriva da fonti multiple e le trasmette a sua volta a molteplici dendriti.</p>
+		<p></p>
+	</Notes>
+</Slide>		
+<Slide>
+	<h2>Creatività per l'AI</h2>
+	<Img src="/3/analogie.png" width={"80vh"} />
+	<Notes>
+		<p>In un certo qual modo i meccanismi creativi dell'AI sono assimilabili a quelli umani, (non a caso visto che per decenni le scienze cognitive hanno cercato di modellare i ns meccanismi di apprendimento)</p>
+		<p>Catturare parole chiave (prompt/filter) e cosa è associato ad esso (train), istruire un modello mentale (plan), e immaginare qualcosa di nuovo (future/inference)</p>
+		<p>I bambini sentono tante volte la parola cane e alla fine imparano e lo associano all'animale, o meglio imparano a riconoscere le caratteristiche distintive che lo rendono cane e non un altro animale</p>
+		<p>Anche gli altri animali imparano, e come per le persone, più abbondanti sono gli stimoli e maggiore sarà lo sviluppo della corteccia cerebrale, tuttavia le connessioni e le attivazioni del cervello umano sono molto più estese.</p>
+		<p>Gli algoritmi di ML richiedono migliaia a volte anche milioni di immagini per un training di base, e poche decine per affinare il modello (finetuning), come per noi una volta imparata una cosa simile, basta poco per ripassarla</p>
 		</Notes>
 	</Slide>
 
-	<Slide>
+	
 		<Slide>
-		<h2>Come si generano le immagini?</h2>
-		<p>E' una copia intelligente dei pixel? </p>
-		<Frag>Latent Space</Frag>
+		<h2>Come vengono codificate le immagini?</h2>
+		<p> Latent Space</p>
+		<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/sV2FOdGqlX0?si=kFBtn7o_QRP46TK5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+		<video data-autoplay controls width="80%">
+			<source src="/3/VAE Latent Space Visualization.mp4" type="video/mp4" />
+		</video>
 		<Notes>
-		<p>Se chiediamo al publico di descrivere le caratteristiche di queste immagini nessuno avrebbe problemi, ma se fossero espressi in linguaggio binario nessuno saprebbe cosa sono</p>
-		<p>Viceversa il computer per codificare le carrateristiche che rendono unica questa immagine, deve tradurla in parametri (feature encoding)</p>
-		<p>Ognuna di queste features, una volta estratte, sono rappresentate da un vettore in uno spazio multidimensionale (latent space) e costituiscono l'input della rete neurale, 
-			insieme alla descrizione testuale creando così una associazione tra testo/(prompt), anch'esso diviso in token e vettorializzato, e immagine.</p>
-		<p>In questo spazio esite il cane, il gatto e tutte le variazioni intermedie, il prompt ci indica dove navigare in questi punti nel Latent Space, 
-			anche una piccola variazione nel prompt come una virgola, può proiettarci in un punto molto diverso del latent space rendendo il processo aleatorio</p>
+		<p>Se chiediamo al pubblico di descrivere a parole le caratteristiche di una immagine nessuno avrebbe problemi, ma se fossero espressi in linguaggio binario nessuno saprebbe cosa sono</p>
+		<p>Viceversa il computer per codificare le caratteristiche che rendono unica questa immagine, deve tradurla in parametri (feature encoding)</p>
+		<p>Ognuna di queste features, una volta estratte, sono rappresentate da un vettore in uno spazio multidimensionale (latent space), insieme alla descrizione testuale.</p>
+		<p>Facendo il training di queste matrici viene così creata una associazione tra testo/(prompt), anch'esso diviso in token e vettorializzato, e immagine.</p>
+		<p>In questo spazio esiste il cane, il gatto e tutte le variazioni intermedie in realtà inesistenti, il prompt ci indica dove navigare in questi punti nel Latent Space.</p>
+		<p>Anche una piccola variazione nel prompt come una virgola, può proiettarci in un punto molto diverso del latent space rendendo il processo in parte aleatorio</p>
 		</Notes>
 	</Slide>		
 	<Slide>
-			<h2> Ma cosa me ne faccio del Latent space</h2>
-			<Frag>Diffusion</Frag>
+		<h2>Come funziona il training?</h2>
+		<Img src="/4/NN.png" width={"50vw"} />
+		<br>
+		<Img src="/4/activation.png" height={"20vh"} />
+
+		<Notes>
+			<p>Come dicevamo nelle NN il neurone è l'unità di base. Ad ogni input è associato un peso (weight) assegnato a seconda di quanto è importante l'input.</p>
+			<p>Il neurone applica una funzione di attivazione. Se il segnale/input è troppo basso il segnale viene scartato altrimenti il segnale prosegue al neurone successivo (Forward propagation)</p>
+			<p>Ma come fa effettivamente ad imparare? Si confronta il risultato ottenuto in output con quello che ci si aspettava, e poi viene aggiustato il peso di ogni connessione di ogni nodo facendo il percorso inverso (Back propagation) </p>
+
+			<p>Ogni passaggio  </p>
+		</Notes>
+	</Slide>		
+	<Slide>
+		<h2> Come si trasformano i numeri di nuovo in pixel? </h2>
+		<Frag>Diffusion / Denoising</Frag>
+		
+		<Img src="/4/cat-steps.jpg" width={"100vw"} />
+		<Img src="/4/dog-steps.jpg" width={"100vw"} />
+		<Img src="/4/cat-dog-steps.jpg" width={"100vw"} />
 			
 			<Notes>
 				<p>C'è poi l'operazione inversa, ossia trasformare questa rappresentazione matematica, di nuovo in una immagine fatta di pixel. Questo processo è chiamato Diffusion</p>
@@ -148,42 +255,50 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 			</Notes>
 		</Slide>		
 	</Slide>
-	<Slide>
-		<h2>Attention is all you need</h2>
-		<Frag>Transformer</Frag>
-		<p>2017 - Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin</p>
+	<Slide>	
+		<Slide>
+			<h2>Transformer</h2>
+			<p>2017 - Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin</p>
+			<Img src="/5/Attention is all you need.png" height={"50vh"} />
+		<Notes>
+			<p>Il titolo e il lavoro di questo paper, scritto da un gruppo di ricercatori Google nel 2017, rimarrà per sempre nella storia del ML</p>
+			<p>Fino a quel momento l'architettura delle deep neural networks - reti neurali (CNN e RNN) era basato su un meccanismo puro encoder-decoder, 
+				loro hanno proposto un metodo più semplice basato sull'attenzione chiamato Trasformer</p>
+			<p>Questo ha permesso di incrementare in maniera massiva la quantità di dati per il training, permettendo così di comprendere a fondo le relazioni 
+				del linguaggio naturale e codificarlo in maniera efficiente, </p>
+			<p>Grazie infatti a questi algoritmi, è stato possibile costruire dei grandi modelli del linguaggio (LLM) come OpenAI/ChatGPT, LLama, Falcon etc</p>	
+			<p>I Trasformer applicati alla generazione di immagini, ha permesso di rendere efficiente l'operazione di apprendere da miliardi di immagini e capire DOVE prestare attenzione in una immagine
+				Distinguere per esempio qual'è il soggetto da uno sfondo, e come l'insieme di questi parametri costituiscono il concetto di cane</p>
+			<p>Le proprietà "con coda" e "con pelo" sono caratteristiche non sufficienti a descrivere univocamente un cane, 
+				trovare il minimo insieme che le descrive, dimenticando cioè che non è essenziale, differenziando il segnale dal noise, è stato reso possibile grazie ai Trasformers.</p>	
+			<p>Un altro modo di pensare ai Transformer è quello di vederli come algoritmi di compressione intelligenti</p>
+		</Notes>
+		</Slide>
+		<Slide>
+		<h2>Problemi dell'AI: </h2>
+		<h3>Specializzazione</h3>
+		<Img src="/5/builder.png" height={"70vh"} />
 
-	<Notes>
-		<p>Il titolo e il lavoro di questo paper, scritto da un gruppo di ricercatori Google nel 2017, rimarrà per sempre nella storia del ML</p>
-		<p>Fino a quel momento l'archittetura delle deep neural networks - reti neurali (CNN e RNN) era basato su un meccanismo puro encoder-decoder, 
-			loro hanno proposto un metodo più semplice basato sull'attenzione chiamato Trasformer</p>
-		<p>Questo ha permesso di incrementare in maniera massiva la quantità di dati per il training, permettendo così di comprendere a fondo le relazioni 
-			del linguaggio naturale e codificarlo in maniera efficente, </p>
-		<p>Grazie infatti a questi algoritmi, è stato possibile costruire dei grandi modelli del linguaggio (LLM) come OpenAI/ChatGPT, LLama, Falcon etc</p>	
-		<p>I Trasformer applicati alla generazione di immagini, ha permesso di rendere efficente l'operazione di apprendere da miliardi di immagini e capire DOVE prestare attenzione in una immagine
-			Distinguere per esempio qual'è il soggetto da uno sfondo, e come l'insieme di questi parametri costituiscono il concetto di cane</p>
-		<p>Le proprietà "con coda" e "con pelo" sono caratterestiche non sufficenti a descrivere univocamente un cane, 
-			trovare il minimo insieme che le descrive, dimenticando cioè che non è essenziale, differenziando il segnale dal noise, è stato reso possibile grazie ai Trasformers.</p>	
-	</Notes>
+		<Notes>
+		<p> Tuttavia i modelli di AI/ML sono molto efficienti quando vengono istruiti per fare qualcosa di altamente specializzato, con compiti ristretti e ben definiti</p>
+		<p>Se si istruisce un modello per creare i paesaggi con migliaia di immagini, diventerà bravissimo a creare i paesaggi ma fallirà miserabilmente a creare un viso. </p>
+		<p>Stessa cosa dicasi per i sw  allenati a riconoscere tumori, non capiranno niente se gli si presenta una immagine di una mela</p>
+		<p>Il ns vantaggio competitivo (per ora) rispetto al'AI è proprio questa capacità enorme di generalizzare</p>
+		<p>Tuttavia conosciamo bene cosa porta una eccessiva specializzazione anche per le persone: magari bravissimi nel fare qualcosa ma con la mentalità ristretta per il resto</p>
+		</Notes>
+
 	</Slide>
 	<Slide>
-	<h2>Problemi dell'AI: Specializzazione</h2>
-	<Notes>
-	<p> Tuttavia i modelli di AI/ML sono molto efficenti quando vengono istruiti per fare qualcosa di altamente specializzato, con compiti ristretti e ben definiti</p>
-	<p>Se si istruisce un modello per creare i paesaggi con migliaia di immagini, diventerà bravissimo a creare i paesaggi ma fallirà miserabilmente a creare un viso. </p>
-	<p>Stessa cosa dicasi per i sw  allenati a riconoscere tumori, non capiranno niente se gli si presenta una immagine di una mela</p>
-	<p>Il ns vantaggio competitivo (per ora) rispetto al'AI è proprio questa capacità enorme di generalizzare</p>
-	<p>Tuttavia conosciamo bene cosa porta una eccessiva specializzazione anche per le persone: magari bravissimi nel fare qualcosa ma con la mentalità ristretta per il resto</p>
-	</Notes>
+		<h2>Problemi dell'AI:</h2>
+		<h3> Black box</h3>
+		<Img src="/5/bbox.png" height={"70vh"} />
 
-</Slide>
-<Slide>
-	<h2>Problemi dell'AI: Black box</h2>
-	<Notes>
-		<p>Una volta creato il modello, è una scatola chiusa che nessuno sa come funziona, perché dà certi risultati e quanto siano attendibili.</p>
-		<p>Però anche il ns cervello funziona così, pochi sanno cosa passa in testa a certa gente, e a volte ci sorprendiamo di noi stessi, e di come reagiamo di fronte a certe situazioni. </p>
-		<p>Siamo abituati a credere le ns azioni e decisioni siano frutto di un ragionamento, ma cosè il ragionamento se non la somma di tutti i bias/conoscenze passate? </p>
-	</Notes>
+		<Notes>
+			<p>Una volta creato il modello, è una scatola chiusa che nessuno sa come funziona, perché dà certi risultati e quanto siano attendibili.</p>
+			<p>Però anche il ns cervello funziona così, pochi sanno cosa passa in testa a certa gente, e a volte ci sorprendiamo di noi stessi, e di come reagiamo di fronte a certe situazioni. </p>
+			<p>Siamo abituati a credere le ns azioni e decisioni siano frutto di un ragionamento, ma cos'è il ragionamento se non la somma di tutti i bias/conoscenze passate? </p>
+		</Notes>
+	</Slide>
 </Slide>
 
 <Slide>
@@ -205,7 +320,7 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 			</div>
 		</div>
 		<Notes>
-			<p>Per chi non cooscesse Aldo questi sono alcune immagini dei suoi lavori che poterete trovare anche qui esposte</p>
+			<p>Per chi non conoscesse Aldo questi sono alcune immagini dei suoi lavori che poterete trovare anche qui esposte</p>
 			<p>Come potete notare ha uno stile difficilmente assimilabile agli altri artisti</p>
 			
 			<p>Introdurre i problemi di training</p>
@@ -226,7 +341,13 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 	<Slide>
 		<h2>Live demo </h2>
 	</Slide>
-
+	<Slide>
+		<h2>Il lavoro per gli artisti del presente </h2>
+		<Notes>
+			<p>Parlare di come cambia il lavoro per tanti nel settore </p>
+			<p>Fare l'esempio dei rendering architettonici</p>
+		</Notes>
+	</Slide>
 	<Slide>
 		<h2>Opere derivate, copyrights e scioperi </h2>
 		<Notes>
@@ -259,7 +380,7 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 
 
 
-
+<!--
 
 
 
@@ -624,3 +745,4 @@ console.log( '"customevent" has fired' );
 			- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
 		</p>
 	</Slide>
+-->
