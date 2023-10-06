@@ -60,29 +60,28 @@ const interval = 5000;
 		<h2>
 			Di cosa si parlerà oggi
 		</h2>
-		<p class="fragment">Prima parte</p>
+		<p class="fragment fade-right">Prima parte</p>
 		<ul style="width: 100vh;">
-			<li class="fragment"> Cos'è la Generative AI</li>
-			<li class="fragment"> Creatività biologica</li>
-			<li class="fragment"> Analogie apprendimento animale e artificiale</li>
-			<li class="fragment"> Creatività biologica</li>
-			<li class="fragment"> Creatività artificiale (come funzionano le Neural networks)</li>
-			<li class="fragment"> Criticità dei modelli di ML</li>
+			<li class="fragment fade-right"> Cos'è la Generative AI</li>
+			<li class="fragment fade-right"> Creatività biologica</li>
+			<li class="fragment fade-right"> Analogie apprendimento animale e artificiale</li>
+			<li class="fragment fade-right"> Creatività biologica</li>
+			<li class="fragment fade-right"> Creatività artificiale (come funzionano le Neural networks)</li>
+			<li class="fragment fade-right"> Criticità dei modelli di ML</li>
 		</ul>
-		<p class="fragment">Seconda parte</p>
+		<p class="fragment fade-right">Seconda parte</p>
 		<ul style="width: 100vh;">
-			<li class="fragment"> Le opere di Aldo Spizzichino</li>
-			<li class="fragment"> Copiare lo stile</li>
-			<li class="fragment"> Re-immaginare con quello stile</li>
-			<li class="fragment"> Live Demo</li>
+			<li class="fragment fade-right"> Le opere di Aldo Spizzichino</li>
+			<li class="fragment fade-right"> Copiare lo stile</li>
+			<li class="fragment fade-right"> Re-immaginare con quello stile</li>
+			<li class="fragment fade-right"> Live Demo</li>
 		</ul>
-		<p class="fragment">Terza parte</p>
+		<p class="fragment fade-right">Terza parte</p>
 		<ul style="width: 100vh;">
-			<li class="fragment"> Come cambia il lavoro per gli artisti del presente</li>
-			<li class="fragment"> Opere derivate e copyrights</li>
-			<li class="fragment"> Conclusioni</li>
+			<li class="fragment fade-right"> Come cambia il lavoro per gli artisti del presente</li>
+			<li class="fragment fade-right"> Opere derivate e copyrights</li>
+			<li class="fragment fade-right"> Conclusioni</li>
 		</ul>
-
 	</Slide>
 	<Slide>
 		<h2>
@@ -98,7 +97,7 @@ const interval = 5000;
 				<p class="green">Perché i ricercatori scientifici sono bravi a fare feste?</p>
 				<p class="yellow">Perché sanno come mescolare bene le soluzioni!</p>
 				<br>
-				<p class="green">	Come si chiama il ricercatore che ha paura del buio?</p>
+				<p class="green">Come si chiama il ricercatore che ha paura del buio?</p>
 				<p class="yellow">Un fotone!</p>
 				
 			</div>
@@ -192,9 +191,10 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 	</Slide>
 </Slide>		
 <Slide>
-	<Slide>
+	<Slide background="/3/via-lattea.png">
 		<h2>Analogie apprendimento animale e artificiale</h2>
 		<ul style="margin:70px;">
+			<li>4 <i class="green">μm</i> (micron) il più piccolo neurone, +1000 volte più grande di un transistor di 3<i class="yellow">nm</i> </li>
 			<li>Moscerino della frutta (Fruit Fly): 100 mila neuroni</li>
 			<li>Scarafaggio: Un milione di neuroni</li>
 			<li>Topo: 75 milioni di neuroni</li>
@@ -252,6 +252,9 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 		<video data-autoplay controls width="80%">
 			<source src="/3/VAE Latent Space Visualization.mp4" type="video/mp4" />
 		</video>
+		<p style="font-size: large;">
+			<a href="https://youtu.be/sV2FOdGqlX0?si=olAVgMsR1GjziGZN">Video fatto da Aqeel Anwar</a> 
+		</p>
 		<Notes>
 		<p>Se chiediamo al pubblico di descrivere a parole le caratteristiche di una immagine nessuno avrebbe problemi, ma se fossero espressi in linguaggio binario nessuno saprebbe cosa sono</p>
 		<p>Viceversa il computer per codificare le caratteristiche che rendono unica questa immagine, deve tradurla in parametri (feature encoding)</p>
@@ -374,6 +377,8 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 	<Slide>
 		<h2>Control-net </h2>
 	</Slide>
+	<!-- <Slide backgroundIframe="https://hakim.se" backgroundInteractive> -->
+
 	<Slide>
 		<h2>Live demo </h2>
 	</Slide>
