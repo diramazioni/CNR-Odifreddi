@@ -9,6 +9,7 @@ import UnoTre  from '../galleries/1-3.svelte';
 import UnoQuatro  from '../galleries/1-4.svelte';
 import DueUno  from '../galleries/2-1.svelte';
 import DueTre  from '../galleries/2-3.svelte';
+import SDtrain  from '../galleries/sd-train.svelte';
 
 const interval = 5000;
 </script>
@@ -331,6 +332,7 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 
 	<Slide>
 		<h2>Risultati ottenuti training </h2>
+		<SDtrain {interval}/>
 	</Slide>
 	<Slide>
 		<h2>Risultati ottenuti training 2 </h2>
