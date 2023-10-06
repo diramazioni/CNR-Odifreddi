@@ -55,6 +55,21 @@ const interval = 5000;
 			generative AI con le opere di Aldo Spizzichino
 		</p>	
 	</Slide>
+	
+	<Slide>
+		<h2>
+			Di cosa si parlerà oggi
+		</h2>
+		<ul>
+			<li class="fragment"> Cos'è la Generative AI</li>
+			<li class="fragment"> Creatività biologica</li>
+			<li class="fragment"> Analogie apprendimento animale e artificiale</li>
+			<li class="fragment"> Creatività biologica</li>
+			<li class="fragment"> Creatività artificiale (Come funzionano le Neural networks)</li>
+			<li class="fragment"> Criticità dei modelli di ML</li>
+
+		</ul>
+	</Slide>
 	<Slide>
 		<h2>
 			Generative AI? 
@@ -62,7 +77,7 @@ const interval = 5000;
 		<div class="container fragment" style="margin-top: -30px;">
 			<div class="box">
 				<p>Generazioni di immagini</p>
-				<Img src="/sd/control-net/Odifreddi-spazio.png" class_="" width="350px"/>
+				<Img src="/2/polyfreddi.png" class_="" width="800px"/>
 			</div>
 			<div class="box">
 				<p>Generazioni di testo</p>
@@ -91,7 +106,7 @@ const interval = 5000;
 
 	</Slide>
 	<Slide>
-		<h2>Creatività per gli umani</h2>
+		<h2>Creatività biologica</h2>
 		<Slide>
 			<Frag>Io non sono creativo...</Frag>
 			<Imgfrag src="/2/casa-1.png" height="60vh"></Imgfrag>
@@ -172,7 +187,7 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 			<li>Gatto: Un miliardo di neuroni</li>
 			<li>Scimpanzè: 7 miliardi di neuroni</li>
 			<li>Elefante: 23 miliardi di neuroni</li>
-			<li>Deep Learning chip: 2.6 trilioni on (7 nm scale)</li>
+			<li>Deep Learning chip: 2.6 trilioni (on 7 nm scale)</li>
 		</ul>
 		
 		
@@ -188,13 +203,18 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 		<p>L'unità di base per il cervello biologico è il neurone. Il loro compito
 			è quello di trasmettere l'impulso elettrico dall'assone ai punti più terminali. Questo è come il ns corpo percepisce la luce, lo stimolo della pressione del tatto, il calore e via dicendo. I segnali dei neuroni specializzati vengono trasmessi dal ns sistema nervoso al cervello composto anch'esso di miliardi di neuroni intercomunicanti, creando una rete. </p>
 		<p>
-			Ma quanti sono? I ricercatori hanno recentemente stimato in 86 miliardi il num di neuroni, che certo è minore dei 200/400 miliardi di stelle nella via Lattea ma comunque è un bel numero.
-			Nel cervelletto è concentrata più della metà, quindi anche la densità non è omogenea
+			Ma quanti sono? I ricercatori hanno recentemente stimato in 86 miliardi il num di neuroni, 
+			che certo è minore dei 200/400 miliardi di stelle nella via Lattea ma comunque è un bel numero.
 		</p>
+		<p>Ma quanto sono grandi? Ci sono diversi tipi di neuroni con finzioni specializzate.
+			Il più piccolo può avere un corpo cellulare di soli 4 micron di larghezza, 
+			mentre i corpi cellulari dei neuroni più grandi possono avere una larghezza di 100 micron.</p>
+		<p>Nel cervelletto è concentrata più della metà, quindi anche la densità non è omogenea.</p>
+		<p>Ogni neurone può stabilire connessioni fino a 1.000 neuroni</p>
+		<p>In una rete biologica il segnale elettrico è catturato dai dendriti. Essi combinandosi formano insieme un segnale più forte. Se il segnale è sufficientemente forte il neurone manda l'impulso attraverso l'assone verso i terminali che passa il segnale ai dendriti del neurone successivo. E' importante notare che il segnale d'entrata arriva da fonti multiple e le trasmette a sua volta a molteplici dendriti.</p>
 		<p>L'unità computazionale di base per i computer sono i transistor. Più che il numero, ha senso parlare della densità raggiunta, comunque quest'anno, un processore di deep learning ha montato 2.6 trilioni di transistor in un singolo chip</p>
 		<p>L'unità computazionale di base per le reti neurali, anch'esso è chiamato neurone. 
 			Riceve input da qualche altro nodo o da fonti esterne e genera un output</p>
-		<p>In una rete biologica il segnale elettrico è catturato dai dendriti. Essi combinandosi formano insieme un segnale più forte. Se il segnale è sufficientemente forte il neurone manda l'impulso attraverso l'assone verso i terminali che passa il segnale ai dendriti del neurone successivo. E' importante notare che il segnale d'entrata arriva da fonti multiple e le trasmette a sua volta a molteplici dendriti.</p>
 		<p></p>
 	</Notes>
 </Slide>		
@@ -255,12 +275,10 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 
 			</Notes>
 		</Slide>		
-	</Slide>
-	<Slide>	
 		<Slide>
 			<h2>Transformer</h2>
 			<p>2017 - Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin</p>
-			<Img src="/5/Attention is all you need.png" height={"50vh"} />
+			<Img src="/4/Attention is all you need.png" height={"50vh"} />
 		<Notes>
 			<p>Il titolo e il lavoro di questo paper, scritto da un gruppo di ricercatori Google nel 2017, rimarrà per sempre nella storia del ML</p>
 			<p>Fino a quel momento l'architettura delle deep neural networks - reti neurali (CNN e RNN) era basato su un meccanismo puro encoder-decoder, 
@@ -274,9 +292,12 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 				trovare il minimo insieme che le descrive, dimenticando cioè che non è essenziale, differenziando il segnale dal noise, è stato reso possibile grazie ai Trasformers.</p>	
 			<p>Un altro modo di pensare ai Transformer è quello di vederli come algoritmi di compressione intelligenti</p>
 		</Notes>
-		</Slide>
+		</Slide>		
+	</Slide>
+	<Slide>	
+		<h2>Criticità dei modelli di ML: </h2>
+
 		<Slide>
-		<h2>Problemi dell'AI: </h2>
 		<h3>Specializzazione</h3>
 		<Img src="/5/builder.png" height={"70vh"} />
 
@@ -290,7 +311,6 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 
 	</Slide>
 	<Slide>
-		<h2>Problemi dell'AI:</h2>
 		<h3> Black box</h3>
 		<Img src="/5/bbox.png" height={"70vh"} />
 
