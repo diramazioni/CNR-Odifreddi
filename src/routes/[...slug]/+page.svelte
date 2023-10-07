@@ -10,6 +10,7 @@ import UnoQuatro  from '../galleries/1-4.svelte';
 import DueUno  from '../galleries/2-1.svelte';
 import DueTre  from '../galleries/2-3.svelte';
 import SDtrain  from '../galleries/sd-train.svelte';
+import Lawsuits  from '../galleries/12.svelte';
 
 const interval = 5000;
 </script>
@@ -65,7 +66,6 @@ const interval = 5000;
 			<li class="fragment fade-right"> Cos'è la Generative AI</li>
 			<li class="fragment fade-right"> Creatività biologica</li>
 			<li class="fragment fade-right"> Analogie apprendimento animale e artificiale</li>
-			<li class="fragment fade-right"> Creatività biologica</li>
 			<li class="fragment fade-right"> Creatività artificiale (come funzionano le Neural networks)</li>
 			<li class="fragment fade-right"> Criticità dei modelli di ML</li>
 		</ul>
@@ -82,6 +82,11 @@ const interval = 5000;
 			<li class="fragment fade-right"> Opere derivate e copyrights</li>
 			<li class="fragment fade-right"> Conclusioni</li>
 		</ul>
+		<Notes>	
+			<p>Vorrei darvi questa sera una spiegazione intuitiva, non tecnica, del funzionamento di questi algoritmi. Niente formule</p>
+			<p>Mi scuso in anticipo con chi già conosce la materia, ma il mio sforzo è stato proprio quello di semplificare, 
+				per fornire spunti di ragionamento e approfondimento</p>
+		</Notes>
 	</Slide>
 	<Slide>
 		<h2>
@@ -105,6 +110,7 @@ const interval = 5000;
 				<p>Composizione di musica</p>
 				<p class="green">MuseNet improvises Chopin from Mozart’s Rondo alla Turca</p>
 				<audio controls data-autoplay src="/MuseNet.mp3"></audio>
+				<p>Stable Audio e altri</p>
 			</div>
 			<div class="box">
 				<p>e tanto altro ancora..</p>
@@ -115,6 +121,10 @@ const interval = 5000;
 		<Notes>	
 			<p>Esempi con delle immagini divertenti, e chiedere al pubblico quanti l'hanno provata</p>
 			<p>Spiegare le differenze applicazioni della Generative AI</p>
+			<p>parlare dei LLM</p>
+			<p>Spiegare che questo è solo l'inizio, visto che questi modelli non solo hanno imparato a capirci ma sanno anche programmare, 
+				possono auto-evolversi, imparando da altri, e sono molto più efficienti e veloci di noi in questa "evoluzione"
+			</p>
 		</Notes>		
 
 	</Slide>
@@ -128,7 +138,7 @@ const interval = 5000;
 			<p>Arg: io non sono creativo... </p>
 			<p>Siamo sicuramente la specie più creativa, anche solo il fatto che ci troviamo qui e parliamo di queste cose dimostra la ns innata creatività (paragoni con altri animali)
 			</p>
-			<p>Spesso questa affermazione viene dal fatto, che non si hanno gli strumenti per esprimere la propria creatività, ma di base siamo tutti creativi, 
+			<p>Spesso chi fà questa affermazione, intende dire che ha gli strumenti per esprimere la propria creatività, ma di base siamo tutti creativi, 
 				e vedremo come IA ha abbassato la barriera di entrata per molti che non si considerano creativi</p>
 
 			</Notes>		
@@ -137,8 +147,13 @@ const interval = 5000;
 			<DueUno interval={5000} />
 			<Notes>
 	<p>Viene da chiedersi qual'è il sw cognitivo in funzione nel ns cervello che assorbe le idee, le sminuzza e le processa continuamente creando nuove idee</p>
-	<p>Per molti anni, gli scienziati hanno cercato di capire questi meccanismi della mente, in quanto era evidente che  un moscerino era più capace di un computer digitale in certi compiti. Questo ha portato l'attenzione ad un problema architetturale: i programmi tradizionali processano i dati i maniera sequenziale, non c'è nessuna incertezza, ambiguità o capacità discrezionale</p>
-	<p>Il cervello degli animali, invece, anche lavorando a frequenze molto più lente, sono in grado di processare gli input in parallelo, e l'ambiguità è una caratteristica della capacità di calcolo</p>
+	<p>Per molti anni, gli scienziati hanno cercato di capire questi meccanismi della mente, in quanto era evidente che  
+		un moscerino era più capace di un computer digitale in certi compiti. 
+	</p>
+	<p>	Questo ha portato l'attenzione ad un problema architetturale: i programmi tradizionali processano i dati i maniera sequenziale,
+		 non c'è nessuna incertezza, ambiguità o capacità discrezionale</p>
+	<p>Il cervello degli animali, invece, anche lavorando a frequenze molto più lente, sono in grado di processare gli input in parallelo,
+		 e l'ambiguità è una caratteristica intrinseca della capacità di calcolo</p>
 
 	<p>C'è poi il mito dell'emisfero destro/sinistro con una parte deputata al pensiero più razionale e l'altra più creativa. In realtà i neuroscienziati hanno visto che le persone più creative usano davvero entrambi gli emisferi del cervello</p>
 	<p>alcune parti, come il linguaggio è vero che sono concentrate nella parte SX, ma per la "creatività" è necessario l'interazione di più parti del cervello per risolvere un determinato compito, 	quindi si parla di Rete Cerebrali. 
@@ -184,7 +199,7 @@ const interval = 5000;
 Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplificato degli algoritmi dei social network, i quali giocano proprio su questo per proporci contenuti che non ci fanno uscira dalla bolla</p>
 <p>vedi terrapiattisti, scientology, religioni, la nostra mente fa di tutto per evitare le incertezze, ma l'ironia è che è proprio lì che devi andare per pensare fuori dal coro ed essere creativo</p>
 <p>In sintesi si può dire che un creativo è in grado di farsi delle domande ed essere critico delle risposte</p>
-
+<p>Anche per l'AI il bias è un elemento fondamentale di funzionamento come vedremo dopo</p>
 
 
 		</Notes>		
@@ -229,7 +244,7 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 		<p>L'unità computazionale di base per i computer sono i transistor. Più che il numero, ha senso parlare della densità raggiunta, comunque quest'anno, un processore di deep learning ha montato 2.6 trilioni di transistor in un singolo chip</p>
 		<p>L'unità computazionale di base per le reti neurali, anch'esso è chiamato neurone. 
 			Riceve input da qualche altro nodo o da fonti esterne e genera un output</p>
-		<p></p>
+		<p>Quindi possiamo dire che un neurone è un elefante rispetto ad un transistor formica.</p>
 	</Notes>
 </Slide>		
 <Slide>
@@ -241,10 +256,9 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 		<p>I bambini sentono tante volte la parola cane e alla fine imparano e lo associano all'animale, o meglio imparano a riconoscere le caratteristiche distintive che lo rendono cane e non un altro animale</p>
 		<p>Anche gli altri animali imparano, e come per le persone, più abbondanti sono gli stimoli e maggiore sarà lo sviluppo della corteccia cerebrale, tuttavia le connessioni e le attivazioni del cervello umano sono molto più estese.</p>
 		<p>Gli algoritmi di ML richiedono migliaia a volte anche milioni di immagini per un training di base, e poche decine per affinare il modello (finetuning), come per noi una volta imparata una cosa simile, basta poco per ripassarla</p>
+		
 		</Notes>
 	</Slide>
-
-	
 		<Slide>
 		<h2>Come vengono codificate le immagini?</h2>
 		<p> Latent Space</p>
@@ -271,11 +285,28 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 		<Img src="/4/activation.png" height={"20vh"} />
 
 		<Notes>
-			<p>Come dicevamo nelle NN il neurone è l'unità di base. Ad ogni input è associato un peso (weight) assegnato a seconda di quanto è importante l'input.</p>
-			<p>Il neurone applica una funzione di attivazione. Se il segnale/input è troppo basso il segnale viene scartato altrimenti il segnale prosegue al neurone successivo (Forward propagation)</p>
-			<p>Ma come fa effettivamente ad imparare? Si confronta il risultato ottenuto in output con quello che ci si aspettava, e poi viene aggiustato il peso di ogni connessione di ogni nodo facendo il percorso inverso (Back propagation) </p>
+			<p>Una volta vettorializzato, l'input è pronto per entrare nella NN, diventa una matrice di numeri</p>
+			<p>Come dicevamo nelle NN il neurone è l'unità di base. 
+				Ad ogni neurone è associato un peso (weight) il segnale, più grande il peso e maggiore sarà l'influenza sul segnale finale</p>
+			<p>I pesi vengo inizializzati casualmente, e sarà la parte che viene via via istruita insieme al bias (fra un istante vediamo cos'è)</p>
+			<p>Il neurone somma tutti i pesi in entrata e applica una funzione di attivazione. Se il segnale/input è troppo basso il segnale viene scartato altrimenti il segnale prosegue al neurone successivo (Forward propagation)</p>
+			<p>Vediamo nel grafico i tre più comuni segnali di attivazione. Quello squadrato (binario) è quello che i computer hanno applicato fino ad adesso nella programmazione tradizionale, superata una certa soglia di condizione è acceso altrimenti spento.
+				Si usa anche nelle NN quando siamo interessati a sapere un si/no un vero/falso, rispetto invece a sapere la probabilità di una data risposta</p>
+			<p>Se ipoteticamente questa rete rappresentasse i colori delle foglie, potremmo essere interessati a sapere con che probabilità una foglia ha un determinato tono di verde
+				A quel punto useremo altre funzioni di attivazione</p>
 
-			<p>Ogni passaggio  </p>
+			<p>Ma cos'è il bias? Nel significato comune, pregiudizio, è un errore sistemico nella previsione o nella valutazione di un certo fenomeno</p>
+			<p>Questo ci dice che il bias, poco o tanto, succede sempre. 
+				Per esempio io che sono alto, faccio fatica a valutare se una persona è m1.5 o m1.7, dalla mia prospettiva sono tutti più bassi di me, 
+				quindi ho un bias nel giudicare le persone più basse di quello che sono veramente. Mi accorgo però di chi è più alto di me... quello si</p>
+			<p>Nel contesto delle NN, ad ogni neurone è associato un bias, un errore che viene sommato/sottratto al risultato finale</p>
+	
+			<p>Ma come fa effettivamente ad imparare? Durante la fase di training, si confronta il risultato ottenuto in output con quello che ci si aspettava, 
+				e poi si applica la Cost function, che ci da una indicazione della distanza che ci resta ancora da percorrere prima di avvicinarci al risultato. 
+				Infatti la  Cost function più comune è la somma dei quadrati delle differenze ma ne esistono anche altre</p>
+			<p>La Cost function sostanzialmente ci indica quanto bene sta imparando il modello restituendoci un bias.
+				A quel punto il gioco è ripercorrere la rete all'indietro per minimizzare l'errore. (Back propagation) 
+				Ogni peso viene aggiustato facendo il percorso inverso, insieme al bias</p>
 		</Notes>
 	</Slide>		
 	<Slide>
@@ -307,7 +338,9 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 				Distinguere per esempio qual'è il soggetto da uno sfondo, e come l'insieme di questi parametri costituiscono il concetto di cane</p>
 			<p>Le proprietà "con coda" e "con pelo" sono caratteristiche non sufficienti a descrivere univocamente un cane, 
 				trovare il minimo insieme che le descrive, dimenticando cioè che non è essenziale, differenziando il segnale dal noise, è stato reso possibile grazie ai Trasformers.</p>	
-			<p>Un altro modo di pensare ai Transformer è quello di vederli come algoritmi di compressione intelligenti</p>
+			<p>Un altro modo di pensare ai Transformer è quello di vederli come algoritmi di compressione intelligenti. </p>
+			<p>Ha dell'incredibile se si pensa che la "sintesi" di centinaia di milioni di immagini possa essere contenuta in pochi Gb di modello, 
+				Come avere la sintesi di tutti i libri mai scritti nella dimensione di un francobollo</p>
 		</Notes>
 		</Slide>		
 	</Slide>
@@ -323,7 +356,7 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 		<p>Se si istruisce un modello per creare i paesaggi con migliaia di immagini, diventerà bravissimo a creare i paesaggi ma fallirà miserabilmente a creare un viso. </p>
 		<p>Stessa cosa dicasi per i sw  allenati a riconoscere tumori, non capiranno niente se gli si presenta una immagine di una mela</p>
 		<p>Il ns vantaggio competitivo (per ora) rispetto al'AI è proprio questa capacità enorme di generalizzare</p>
-		<p>Tuttavia conosciamo bene cosa porta una eccessiva specializzazione anche per le persone: magari bravissimi nel fare qualcosa ma con la mentalità ristretta per il resto</p>
+		<p>Tuttavia conosciamo bene cosa porta una eccessiva specializzazione anche nelle persone: magari bravissimi nel fare qualcosa ma con la mentalità ristretta per il resto</p>
 		</Notes>
 
 	</Slide>
@@ -384,21 +417,48 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 	</Slide>
 	<Slide>
 		<h2>Il lavoro per gli artisti del presente </h2>
-		<Notes>
-			<p>Parlare di come cambia il lavoro per tanti nel settore </p>
-			<p>Fare l'esempio dei rendering architettonici</p>
+		<Notes>		
+			<p>esempio dei rendering architettonici</p>
+
 		</Notes>
 	</Slide>
 	<Slide>
 		<h2>Opere derivate, copyrights e scioperi </h2>
+		<Lawsuits interval={60000} />
 		<Notes>
-		<p> Esempi di artisti che hanno discusso sull'argomento James Guney etc </p>
-		<p>Stability.ai e litigation</p>
-		<p>Recenti scioperi ad Holywood</p>
-		<p>censorship</p>
-		<p>bias to white man</p>
+			<p>Le prime applicazioni di Generative AI sono nate poco più di un anno fà, ma hanno portato già profondi cambiamenti in tutti i settori produttivi</p>
+			<p>In questi giorni c'è stato il più lungo sciopero degli autori e scrittori di Hollywood della storia, in protesta verso l'uso della AI per film e televisione</p>
+			<p>Questo sciopero ha letteralmente bloccato l'industria per mesi, con lunghe negoziazioni tra autori e produttori, verso un uso indiscriminato dell'AI che rischia di
+				mettere al repentaglio il ruolo degli autori in una battaglia sulla creatività umana</p>
+			<p>Hanno ottenuto che non sarà vietato l'uso dell'AI ma viene ristretto agli autori e non il contrario, 
+				per evitare situazioni in cui viene chiesto all'AI di scrivere un intero testo e all'autori di adattarlo e correggerlo</p>
+			<p>Al termine dei negoziati il rappresentante ha affermato con soddisfazione: 
+				"Non ci siamo protetti dalla tecnologia, ma dagli altri uomini che provano sempre ad approfittarsene"</p>
+			<p>Ovviamente, gli artisti e autori di Hollywood hanno un sindacato e un certo potere contrattuale, che non godono la maggior parte degli autori/artisti</p>
+			<p>In pericolo ci sono anche attori, che già si trovano con le proprie voci clonate e presto anche con un digital twin, 
+				artisti visivi come abbiamo visto questa sera, tutto il mercato della produzione e post-produzione video, 
+				3D, effetti speciali, concept artist, fotografi, e tutto il mercato che lo sostiene</p>
+			
+			<p>James Gurney, un famoso artista visivo, afferma: "Molti artisti sono preoccupati che questi modelli di AI vengano istruiti su immagini protette da copyrights, 
+				altri sono preoccupati per il calo o la perdita di lavoro, altri sono impegnati nella battaglia per fermarla o regolarla,
+				io non sono preoccupato da nessuno di questi problemi perché l'arte generativa, nella maggiorparte dei casi altera il risultato, come fanno le persone. 
+				Uno stile di un artista non può e non dovrebbe essere protetto da copyrights. 
+				Voglio mettere in guardia gli allarmisti che vorrebbero usare qualche meccanismo per la protezione dei diritti, questo, invece che proteggere i piccoli autori,
+				potrebbe portare ad un effetto avverso sulla crescita di questa nuova forma d'arte, e favorire invece le potenti lobby dell'industria dell'intrattenimento" </p>
+			<p>A conferma di questi timori sono state le due cause intentate contro Stability.ai, 
+				la compagnia che ha contribuito allo sviluppo di stable-diffusion il modello il cui funzionamento abbiamo visto questa sera. 
+				Delle tre società che offrono questo servizio di generazioni delle immagini (OpenAI con DALL-e, Midjourney e Stability)
+				l'unica ad essere stata colpita da ben due cause è stata Stability che ha rilasciato il modello opensource gratuitamente al pubblico</p>
 		</Notes>
+		
+	</Slide>
+	<Slide>
+		<h2>Conclusioni</h2>
 
+		<Notes>
+			<p>ringraziamenti</p>
+
+		</Notes>
 	</Slide>
 	
 
