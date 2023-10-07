@@ -7,6 +7,6 @@
   export let interval = 1500;
 </script>
   
-
+<p style="font-size: x-large; margin:0;">Contorni</p>
 <Galery {interval} imagePath={imagePath} />
 

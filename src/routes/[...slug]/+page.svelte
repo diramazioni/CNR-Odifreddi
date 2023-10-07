@@ -10,6 +10,10 @@ import UnoQuatro  from '../galleries/1-4.svelte';
 import DueUno  from '../galleries/2-1.svelte';
 import DueTre  from '../galleries/2-3.svelte';
 import SDtrain  from '../galleries/sd-train.svelte';
+import Lora  from '../galleries/lora.svelte';
+import Text2img  from '../galleries/text2img.svelte';
+import Img2img  from '../galleries/img2img.svelte';
+import CCnet  from '../galleries/controlnet.svelte';
 import Lawsuits  from '../galleries/12.svelte';
 
 const interval = 5000;
@@ -49,8 +53,8 @@ const interval = 5000;
 		<h2>
 			nell'era dell'intelligenza artificiale
 		</h2>
-		<img class="r-frame"  
-		data-src="/sd/control-net/Odifreddi-spazio.png" alt="">
+		<Img src="/18/es-005.png" width="30vw" class_="" />
+		<Img src="/18/Odifreddi-spazio.png" width="30vw" class_="" />
 		<p>Eli Spizzichino e Piergiorgio Odifreddi </p>
 		<p class="par">
 			generative AI con le opere di Aldo Spizzichino
@@ -71,60 +75,60 @@ const interval = 5000;
 		</ul>
 		<p class="fragment fade-right">Seconda parte</p>
 		<ul style="width: 100vh;">
+			<li class="fragment fade-right"> Alcuni esempi di immagini generate con l'AI</li>
 			<li class="fragment fade-right"> Le opere di Aldo Spizzichino</li>
-			<li class="fragment fade-right"> Copiare lo stile</li>
 			<li class="fragment fade-right"> Re-immaginare con quello stile</li>
-			<li class="fragment fade-right"> Live Demo</li>
 		</ul>
-		<p class="fragment fade-right">Terza parte</p>
+		<p class="fragment fade-right">Live Demo</p>
+		<p class="fragment fade-right">Conclusione</p>
 		<ul style="width: 100vh;">
 			<li class="fragment fade-right"> Come cambia il lavoro per gli artisti del presente</li>
 			<li class="fragment fade-right"> Opere derivate e copyrights</li>
-			<li class="fragment fade-right"> Conclusioni</li>
 		</ul>
-		<Notes>	
-			<p>Vorrei darvi questa sera una spiegazione intuitiva, non tecnica, del funzionamento di questi algoritmi. Niente formule</p>
-			<p>Mi scuso in anticipo con chi già conosce la materia, ma il mio sforzo è stato proprio quello di semplificare, 
-				per fornire spunti di ragionamento e approfondimento</p>
-		</Notes>
 	</Slide>
 	<Slide>
 		<h2>
 			Generative AI? 
 		</h2>
-		<div class="container fragment" style="margin-top: -30px;">
-			<div class="box">
+		<div class="container" style="margin-top: -30px;">
+			<div class="box fragment">
 				<p>Generazioni di immagini</p>
 				<Img src="/2/polyfreddi.png" class_="" width="800px"/>
 			</div>
-			<div class="box">
+			<div class="box fragment">
 				<p>Generazioni di testo</p>
 				<p class="green">Perché i ricercatori scientifici sono bravi a fare feste?</p>
 				<p class="yellow">Perché sanno come mescolare bene le soluzioni!</p>
 				<br>
 				<p class="green">Come si chiama il ricercatore che ha paura del buio?</p>
 				<p class="yellow">Un fotone!</p>
+				<br>
+				<p class="green">Cosa vuol dire CNR?</p>
+				<p class="yellow">Centro Numerosi Ricercatori</p>
 				
 			</div>
-			<div class="box">
+			<div class="box fragment">
 				<p>Composizione di musica</p>
 				<p class="green">MuseNet improvises Chopin from Mozart’s Rondo alla Turca</p>
 				<audio controls data-autoplay src="/MuseNet.mp3"></audio>
 				<p>Stable Audio e altri</p>
 			</div>
-			<div class="box">
+			<div class="box fragment">
 				<p>e tanto altro ancora..</p>
 			</div>
 		</div>
 		
 		
 		<Notes>	
-			<p>Esempi con delle immagini divertenti, e chiedere al pubblico quanti l'hanno provata</p>
-			<p>Spiegare le differenze applicazioni della Generative AI</p>
-			<p>parlare dei LLM</p>
-			<p>Spiegare che questo è solo l'inizio, visto che questi modelli non solo hanno imparato a capirci ma sanno anche programmare, 
-				possono auto-evolversi, imparando da altri, e sono molto più efficienti e veloci di noi in questa "evoluzione"
-			</p>
+				<br>
+			<p>Chiedere al pubblico quanti hanno provata.</p>
+			<p>Quale di queste battute sono state generate dall'AI?</p>
+			
+			<p>Vorrei darvi questa sera una spiegazione intuitiva, non tecnica, del funzionamento di questi algoritmi. 
+				Per questo farò dei paragoni col mondo biologico, niente formule promesso!</p>
+			<p>Mi scuso in anticipo con chi già conosce la materia, ma il mio sforzo è stato proprio quello di semplificare, 
+				per fornire spunti di ragionamento e approfondimento</p>
+	
 		</Notes>		
 
 	</Slide>
@@ -138,7 +142,7 @@ const interval = 5000;
 			<p>Arg: io non sono creativo... </p>
 			<p>Siamo sicuramente la specie più creativa, anche solo il fatto che ci troviamo qui e parliamo di queste cose dimostra la ns innata creatività (paragoni con altri animali)
 			</p>
-			<p>Spesso chi fà questa affermazione, intende dire che ha gli strumenti per esprimere la propria creatività, ma di base siamo tutti creativi, 
+			<p>Spesso chi fà questa affermazione, intende dire che non ha gli strumenti per esprimere la propria creatività, ma di base siamo tutti creativi, 
 				e vedremo come IA ha abbassato la barriera di entrata per molti che non si considerano creativi</p>
 
 			</Notes>		
@@ -167,19 +171,15 @@ const interval = 5000;
 			<Notes>
 
 	<p>Ci sono tre reti principali che interagiscono nel processo di creatività, in qualsiasi campo lo si applichi, scienza, arte...:</p>
-	<p>Executive attention network (plan mode), ci permette di tenere più cose in testa contemporaneamente, una sorta di memoria di lavoro per creare strategie per raggiungere un obiettivo,
+	<p>Executive attention network (sfera presente), ci permette di tenere più cose in testa contemporaneamente, una sorta di memoria di lavoro per creare strategie per raggiungere un obiettivo,
 		per non perdersi, o rifare il lavoro. Inoltre contribuisce ad inibire dare risposte ovvie, o scegliere strategie semplici che vengono in mente per prima.
 	</p>
-	<p>Imagination network (future mode): si attiva ogni volta che concentriamo l'attenzione su noi stessi, sui ns sogni ad occhi aperti, gli obiettivi futuri.
+	<p>Imagination network (sfera futura): si attiva ogni volta che concentriamo l'attenzione su noi stessi, sui ns sogni ad occhi aperti, gli obiettivi futuri.
+		la parte pre-frontale, ci permette di simulare le possibilità degli eventi, di separare noi stessi dalla situazione presente. 
 		Inoltre è anche il centro della compassione, dove proviamo a metterci in ascolto verso l'altro, e ad aprirci vs nuove idee</p>
-	<p>Background attention network (filter mode): si attiva sottolineando le cose che sono interessanti per noi, e scartando quelle che non lo sono.
-		Essenzialmente è un filtro, prima ancora della fase immaginativa e certamente prima della fase esecutiva, la ns mente inconsciamente filtra le info e le manda alle altre parti
-	</p>
-	<p>La ns corteccia è molto più estesa degli altri animali, e in particolare la parte pre-frontale, ci permette di simulare le possibilità degli eventi, di
-		separare noi stessi dalla situazione presente e proiettarci vs un futuro.
-	</p>
-
-	<p>Impariamo molto bene dagli altri, anche grazie al linguaggio, e questo ci mette davanti a tutte le altre specie, Però dobbiamo ammetere che i computer sono più efficienti, ma ne parliamo dopo</p>
+	<p>Background attention network (sfera passata): si attiva sottolineando le cose che sono interessanti per noi, e scartando quelle che non lo sono.
+		La ns mente inconsciamente filtra le info e le manda alle altre parti
+	</p>	
 </Notes>		
 </Slide>
 <Slide>
@@ -187,7 +187,7 @@ const interval = 5000;
 	<DueTre />
 	<Notes>
 <p> Creatività richiede quindi grande conoscenza di quello che è successo prima e hanno fatto gli altri, e grande lungimiranza per pensare fuori dal gruppo.
-	Quello che possiamo creare è una evoluzione di quello che abbiamo già assorbito
+	Quello che possiamo creare è una evoluzione di quello che abbiamo già abbiamo assorbito
 </p>
 <p>Se si confronta per esempio i musicisti o gli artisti visivi di diversi nazioni, nel passato (prima di internet) 
 	ci si rende conto che sono fortemente influenzati dalla cultura del paese di origine... non è che un Ravi Shankar non fosse tecnicamente in grado di comporre un pezzo di Ennio Morricone, e viceversa,
@@ -200,51 +200,55 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 <p>vedi terrapiattisti, scientology, religioni, la nostra mente fa di tutto per evitare le incertezze, ma l'ironia è che è proprio lì che devi andare per pensare fuori dal coro ed essere creativo</p>
 <p>In sintesi si può dire che un creativo è in grado di farsi delle domande ed essere critico delle risposte</p>
 <p>Anche per l'AI il bias è un elemento fondamentale di funzionamento come vedremo dopo</p>
-
-
 		</Notes>		
 	</Slide>
 </Slide>		
 <Slide>
 	<Slide background="/3/via-lattea.png">
 		<h2>Analogie apprendimento animale e artificiale</h2>
+		<p>ordini di grandezza...</p>
 		<ul style="margin:70px;">
-			<li>4 <i class="green">μm</i> (micron) il più piccolo neurone, +1000 volte più grande di un transistor di 3<i class="yellow">nm</i> </li>
-			<li>Moscerino della frutta (Fruit Fly): 100 mila neuroni</li>
-			<li>Scarafaggio: Un milione di neuroni</li>
-			<li>Topo: 75 milioni di neuroni</li>
-			<li>Gatto: Un miliardo di neuroni</li>
-			<li>Scimpanzè: 7 miliardi di neuroni</li>
-			<li>Elefante: 23 miliardi di neuroni</li>
+			<li>Un transistor di 3<i class="yellow">nm</i> è  +1000 volte più piccolo del neurone più piccolo  (4 <i class="green">μm</i>) </li>
+			<li>Moscerino della frutta (Fruit Fly): 150 mila neuroni</li>
+			<li>Scarafaggio: Un milione</li>
+			<li>Topo: 71 milioni / Ratto 200</li>
+			<li>Gatto: Un miliardo</li>
+			<li>Cane: 2/4 miliardi</li>
+			<li>Orso bruno: 9.5 miliardi</li>
+			<li>Scimpanzé: 28 miliardi</li>
+			<li>Gorilla: 33 miliardi</li>
+			<li>Uomo: 86 miliardi</li>
+			<li>Elefante africano: 257 miliardi</li>
 			<li>Deep Learning chip: 2.6 trilioni (on 7 nm scale)</li>
 		</ul>
 		
 		
 		<Img src="/3/chip-scale5.png" height={"60vh"} class_=""/>
-		<br>
-		<q style="font-size: xx-large;">Abbiamo riscontrato che, in media, il cervello umano ha 86 miliardi di neuroni. E non uno dei cervelli che abbiamo esaminato finora raggiunge i 100 miliardi </q>
-		<q style="font-size: xx-large;">
-			Anche se può sembrare una piccola differenza la quantità di 14 miliardi di neuroni è praticamente il numero di neuroni presente in un cervello di babbuino o quasi la metà del numero di neuroni nel cervello di gorilla. Ecco, questa differenza in realtà è abbastanza grande
-		</q>
-		<i style="font-size: large;">Dr.ssa Suzana Herculano-Houze</i>
 
 		<Notes>
-		<p>L'unità di base per il cervello biologico è il neurone. Il loro compito
-			è quello di trasmettere l'impulso elettrico dall'assone ai punti più terminali. Questo è come il ns corpo percepisce la luce, lo stimolo della pressione del tatto, il calore e via dicendo. I segnali dei neuroni specializzati vengono trasmessi dal ns sistema nervoso al cervello composto anch'esso di miliardi di neuroni intercomunicanti, creando una rete. </p>
+		<p>L'unità di base per il cervello biologico è il neurone. 
+			Il loro compito è quello di determinare l'impulso elettrico. 
+			Così è come il ns corpo percepisce i vari stimoli sensoriali per esempio. 
+		</p>
+		<p>Ogni neurone può stabilire connessioni fino ad altri 1.000 neuroni tramite i dendriti formando una rete di 100 trilioni di connessioni reciproche</p>
+		<p>Nel cervelletto ne è concentrata più della metà, quindi la densità non è omogenea.</p>
 		<p>
 			Ma quanti sono? I ricercatori hanno recentemente stimato in 86 miliardi il num di neuroni, 
 			che certo è minore dei 200/400 miliardi di stelle nella via Lattea ma comunque è un bel numero.
 		</p>
-		<p>Ma quanto sono grandi? Ci sono diversi tipi di neuroni con finzioni specializzate.
-			Il più piccolo può avere un corpo cellulare di soli 4 micron di larghezza, 
+		<p>Ma quanto sono grandi? Ci sono diversi tipi di neuroni con funzioni specializzate.
+			Il più piccolo può avere un corpo cellulare di 4 micron di larghezza, 
 			mentre i corpi cellulari dei neuroni più grandi possono avere una larghezza di 100 micron.</p>
-		<p>Nel cervelletto è concentrata più della metà, quindi anche la densità non è omogenea.</p>
-		<p>Ogni neurone può stabilire connessioni fino a 1.000 neuroni</p>
-		<p>In una rete biologica il segnale elettrico è catturato dai dendriti. Essi combinandosi formano insieme un segnale più forte. Se il segnale è sufficientemente forte il neurone manda l'impulso attraverso l'assone verso i terminali che passa il segnale ai dendriti del neurone successivo. E' importante notare che il segnale d'entrata arriva da fonti multiple e le trasmette a sua volta a molteplici dendriti.</p>
-		<p>L'unità computazionale di base per i computer sono i transistor. Più che il numero, ha senso parlare della densità raggiunta, comunque quest'anno, un processore di deep learning ha montato 2.6 trilioni di transistor in un singolo chip</p>
+		<p>Quindi possiamo dire che un neurone è grande quanto un elefante confrontato ad un transistor formica.</p>
+
+		<p>I segnali dei dendriti combinandosi formano insieme un segnale più forte. 
+			Se il segnale è sufficientemente forte il neurone manda l'impulso attraverso l'assone verso i terminali 
+			che passa il segnale ai dendriti dei molteplici neuroni successivi. 
+		</p>			
+		<p>L'unità computazionale di base per i computer sono i transistor. 
+			Quest'anno, un processore di deep learning ha montato 2.6 trilioni di transistor in un singolo chip</p>
 		<p>L'unità computazionale di base per le reti neurali, anch'esso è chiamato neurone. 
 			Riceve input da qualche altro nodo o da fonti esterne e genera un output</p>
-		<p>Quindi possiamo dire che un neurone è un elefante rispetto ad un transistor formica.</p>
 	</Notes>
 </Slide>		
 <Slide>
@@ -365,12 +369,31 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 		<Img src="/5/bbox.png" height={"70vh"} />
 
 		<Notes>
-			<p>Una volta creato il modello, è una scatola chiusa che nessuno sa come funziona, perché dà certi risultati e quanto siano attendibili.</p>
+			<p>Una volta creato il modello, è una scatola chiusa che nessuno sa come funziona, perché dà certi risultati, e quanto siano attendibili.</p>
 			<p>Però anche il ns cervello funziona così, pochi sanno cosa passa in testa a certa gente, e a volte ci sorprendiamo di noi stessi, e di come reagiamo di fronte a certe situazioni. </p>
 			<p>Siamo abituati a credere le ns azioni e decisioni siano frutto di un ragionamento, ma cos'è il ragionamento se non la somma di tutti i bias/conoscenze passate? </p>
 		</Notes>
 	</Slide>
 </Slide>
+<Slide>
+	<h2>Text to image </h2>
+	<Text2img  interval={15000}/>
+</Slide>
+<Slide>
+	<h2>Image to Image </h2>
+	<Img2img  interval={15000}/>
+</Slide>
+<Slide>
+	<h2>In-painting </h2>
+	<Img2img  interval={15000}/>
+</Slide>
+<Slide>
+	<h2>Control-net </h2>
+	<CCnet interval={15000}/>
+</Slide>
+<!-- <Slide>
+	<h2>IPadapter-plus</h2>
+</Slide> -->
 
 <Slide>
 		<p class="par">
@@ -401,27 +424,26 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 	</Slide>
 
 	<Slide>
-		<h2>Risultati ottenuti training </h2>
+		<h2>Risultati ottenuti col training </h2>
 		<SDtrain {interval}/>
 	</Slide>
 	<Slide>
-		<h2>Risultati ottenuti training 2 </h2>
+		<h2>Risultati ottenuti con LoRa + training </h2>
+		<Lora {interval}/>
 	</Slide>
+	
 	<Slide>
-		<h2>Control-net </h2>
+		<h2>Live demo ...</h2>
 	</Slide>
-	<!-- <Slide backgroundIframe="https://hakim.se" backgroundInteractive> -->
+	<!-- ComfyUI -->
+	<Slide backgroundIframe="https://mqiq1hnhvcvhbx-3020.proxy.runpod.net/" backgroundInteractive>
 
-	<Slide>
-		<h2>Live demo </h2>
 	</Slide>
-	<Slide>
-		<h2>Il lavoro per gli artisti del presente </h2>
-		<Notes>		
-			<p>esempio dei rendering architettonici</p>
+	<!-- Stable diffusion -->
+	<Slide backgroundIframe="https://mqiq1hnhvcvhbx-3000.proxy.runpod.net/" backgroundInteractive>
 
-		</Notes>
 	</Slide>
+	
 	<Slide>
 		<h2>Opere derivate, copyrights e scioperi </h2>
 		<Lawsuits interval={60000} />
@@ -431,7 +453,7 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 			<p>Questo sciopero ha letteralmente bloccato l'industria per mesi, con lunghe negoziazioni tra autori e produttori, verso un uso indiscriminato dell'AI che rischia di
 				mettere al repentaglio il ruolo degli autori in una battaglia sulla creatività umana</p>
 			<p>Hanno ottenuto che non sarà vietato l'uso dell'AI ma viene ristretto agli autori e non il contrario, 
-				per evitare situazioni in cui viene chiesto all'AI di scrivere un intero testo e all'autori di adattarlo e correggerlo</p>
+				per evitare situazioni in cui viene chiesto all'AI di scrivere un intero testo e agli autori di adattarlo e correggerlo</p>
 			<p>Al termine dei negoziati il rappresentante ha affermato con soddisfazione: 
 				"Non ci siamo protetti dalla tecnologia, ma dagli altri uomini che provano sempre ad approfittarsene"</p>
 			<p>Ovviamente, gli artisti e autori di Hollywood hanno un sindacato e un certo potere contrattuale, che non godono la maggior parte degli autori/artisti</p>
@@ -449,11 +471,27 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 				la compagnia che ha contribuito allo sviluppo di stable-diffusion il modello il cui funzionamento abbiamo visto questa sera. 
 				Delle tre società che offrono questo servizio di generazioni delle immagini (OpenAI con DALL-e, Midjourney e Stability)
 				l'unica ad essere stata colpita da ben due cause è stata Stability che ha rilasciato il modello opensource gratuitamente al pubblico</p>
-		</Notes>
+			<p>Questo è solo l'inizio, visto che questi modelli non solo hanno imparato a capirci, a replicarci,  ma sanno anche programmare, 
+				e quindi possono auto-evolversi, imparando da altri, in maniera molto più efficiente e veloce di noi.
+			</p>
+	
+			<p>"In conclusione, la generative AI ha aperto nuove porte per l'espressione artistica, sfidando le nostre concezioni tradizionali di creatività e ispirandoci a esplorare nuove frontiere dell'immaginazione</p>
+			<p>È un momento affascinante in cui la tecnologia e l'arte si fondono per creare un mondo di possibilità infinite, e sono ansioso di vedere come i futuri artisti e creatori continueranno a dar vita a questa straordinaria collaborazione."</p>	
+			</Notes>
 		
 	</Slide>
 	<Slide>
-		<h2>Conclusioni</h2>
+		<h2>la Fine, ma un inizio</h2>
+
+		<Img src="/18/speakers.png" width={"50vw"} class_=""/>
+		<p>si ringrazia</p>
+		
+		<Img src="/18/LogoAutunno_SlowScience.png" width={"17vw"} class_=""/>
+		<Img src="/18/Logo_Lungo-new.png" width={"30vw"} class_=""/>
+		
+		<p style="font-size: medium;">
+			* Tutte le immagini prodotte per la presentazione, ad eccezione di quelle di Aldo Spizzichino, sono state prodotte con Stable Diffusion e sono rilasciate con licenza  "CC BY-SA"
+		</p>
 
 		<Notes>
 			<p>ringraziamenti</p>

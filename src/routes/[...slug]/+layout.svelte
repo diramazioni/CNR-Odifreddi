@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { Code, Notes, RevealJsContext, Slide } from '$lib';
+	import {  RevealJsContext } from '$lib';
 	import type Reveal from 'reveal.js';
 
 	// The highlight plugin requires a stylesheet

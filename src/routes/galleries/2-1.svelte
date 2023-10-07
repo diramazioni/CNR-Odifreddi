@@ -4,7 +4,7 @@
   import GaleryFull from "$lib/GalleryFull.svelte";
   const imageModules = import.meta.glob("$lib/assets/2/1/*.png"); 
   const imagePath = Object.keys(imageModules).map((key) => key.substring("/src/lib/assets".length))
-  export let interval = 1500;
+  export let interval = 5000;
   </script>
   
 
