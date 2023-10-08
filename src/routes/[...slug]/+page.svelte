@@ -86,13 +86,10 @@ const interval = 7000;
 			<li class="fragment fade-right"> Opere derivate e copyrights</li>
 		</ul>
 		<Notes>	
-		<p>Chiedere al pubblico quanti hanno provata.</p>
-		<p>Quale di queste battute sono state generate dall'AI?</p>
-		<br>
 		<p>Vorrei darvi questa sera una spiegazione intuitiva, non tecnica, del funzionamento di questi algoritmi. 
 			Per questo farò dei paragoni col mondo biologico, niente formule promesso!</p>
 		<p>Mi scuso in anticipo con chi già conosce la materia, il mio sforzo questa sera è quello di semplificare, 
-			e fornire una spiegazione intuita, per fornire spunti di ragionamento e approfondimento</p>
+			e fornire una spiegazione intuitiva, per fornire spunti di ragionamento e approfondimento</p>
 
 	</Notes>			
 	</Slide>
@@ -145,7 +142,7 @@ const interval = 7000;
 			<Imgfrag src="/2/casa-1.png" height="60vh"></Imgfrag>
 			<Notes>
 
-			<p>Arg: io non sono creativo... </p>
+			<p>io non sono creativo... Quante volte ho sentito dire questa frase</p>
 			<p>Siamo sicuramente la specie più creativa, anche solo il fatto che ci troviamo qui e parliamo di queste cose dimostra la ns innata creatività (paragoni con altri animali)
 			</p>
 			<p>Spesso chi fà questa affermazione, intende dire che non ha gli strumenti per esprimere la propria creatività, ma di base siamo tutti creativi, 
