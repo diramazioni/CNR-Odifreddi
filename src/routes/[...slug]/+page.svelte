@@ -9,6 +9,7 @@ import UnoTre  from '../galleries/1-3.svelte';
 import UnoQuatro  from '../galleries/1-4.svelte';
 import DueUno  from '../galleries/2-1.svelte';
 import DueTre  from '../galleries/2-3.svelte';
+import Quattro  from '../galleries/4-4.svelte';
 import SDtrain  from '../galleries/sd-train.svelte';
 import Lora  from '../galleries/lora.svelte';
 import Text2img  from '../galleries/text2img.svelte';
@@ -71,7 +72,7 @@ const interval = 5000;
 			<li class="fragment fade-right"> Creatività biologica</li>
 			<li class="fragment fade-right"> Analogie apprendimento animale e artificiale</li>
 			<li class="fragment fade-right"> Creatività artificiale (come funzionano le Neural networks)</li>
-			<li class="fragment fade-right"> Criticità dei modelli di ML</li>
+			<li class="fragment fade-right"> Criticità per l'AI</li>
 		</ul>
 		<p class="fragment fade-right">Seconda parte</p>
 		<ul style="width: 100vh;">
@@ -82,7 +83,6 @@ const interval = 5000;
 		<p class="fragment fade-right">Live Demo</p>
 		<p class="fragment fade-right">Conclusione</p>
 		<ul style="width: 100vh;">
-			<li class="fragment fade-right"> Come cambia il lavoro per gli artisti del presente</li>
 			<li class="fragment fade-right"> Opere derivate e copyrights</li>
 		</ul>
 	</Slide>
@@ -255,7 +255,7 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 	<h2>Creatività per l'AI</h2>
 	<Img src="/3/analogie.png" width={"80vh"} />
 	<Notes>
-		<p>In un certo qual modo i meccanismi creativi dell'AI sono assimilabili a quelli umani, (non a caso visto che per decenni le scienze cognitive hanno cercato di modellare i ns meccanismi di apprendimento)</p>
+		<p>In un certo qual modo i meccanismi creativi dell'AI sono assimilabili a quelli umani, (non a caso visto che per decenni le scienze cognitive ci hanno aiutato a modellare quello artificiale)</p>
 		<p>Catturare parole chiave (prompt/filter) e cosa è associato ad esso (train), istruire un modello mentale (plan), e immaginare qualcosa di nuovo (future/inference)</p>
 		<p>I bambini sentono tante volte la parola cane e alla fine imparano e lo associano all'animale, o meglio imparano a riconoscere le caratteristiche distintive che lo rendono cane e non un altro animale</p>
 		<p>Anche gli altri animali imparano, e come per le persone, più abbondanti sono gli stimoli e maggiore sarà lo sviluppo della corteccia cerebrale, tuttavia le connessioni e le attivazioni del cervello umano sono molto più estese.</p>
@@ -311,6 +311,21 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 			<p>La Cost function sostanzialmente ci indica quanto bene sta imparando il modello restituendoci un bias.
 				A quel punto il gioco è ripercorrere la rete all'indietro per minimizzare l'errore. (Back propagation) 
 				Ogni peso viene aggiustato facendo il percorso inverso, insieme al bias</p>
+		</Notes>
+	</Slide>
+	<Slide>
+		<h2> Cosa "impara" la rete neurale? </h2>
+		<Frag>Sezioniamo un neurone</Frag>
+		<!-- <a style="font-size: medium; margin:0;" href="https://towardsdatascience.com/visual-interpretability-for-convolutional-neural-networks-2453856210ce">
+			Visual Interpretability for Convolutional Neural Networks
+		</a> -->
+		<Quattro {interval} />
+
+		<Notes>
+		<p>Questa è una visualizzazione degli strati interni di una CNN</p>
+		<p>Possiamo vederli come dei filtri ("edge-detector" per chi sa cosa sono)</p>
+		<p>Dato un determinato input alcuni filtri produrranno un output maggiore degli altri.</p>
+		<p>Osservando i filtri possiamo farci una idea che pattern ogni strato ha imparato ad estrarre dall'input</p>
 		</Notes>
 	</Slide>		
 	<Slide>
