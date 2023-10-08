@@ -446,7 +446,7 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 
 	<Slide>
 		<h2>Risultati ottenuti col training </h2>
-		<SDtrain interval={3000}/>
+		<SDtrain {interval}/>
 	</Slide>
 	<Slide>
 		<h2>Risultati ottenuti con LoRa + training </h2>
