@@ -49,11 +49,11 @@ const interval = 7000;
 
 	<Slide>
 		<h2>
-			Arte e creatività 
+			Opere derivate
 		</h2>
-		<h2>
-			nell'era dell'intelligenza artificiale
-		</h2>
+		<h5>
+			Arte e creatività nell'era dell'intelligenza artificiale			
+		</h5>
 		<Img src="/18/es-005.png" width="30vw" class_="" />
 		<Img src="/18/Odifreddi-spazio.png" width="30vw" class_="" />
 		<p>Eli Spizzichino e Piergiorgio Odifreddi </p>
