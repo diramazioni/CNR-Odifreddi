@@ -10,13 +10,3 @@
 
   <GaleryFull {interval} imagePath={imagePath}/>
 
-<style>
-	:global(.img_cont > img) {
-		justify-content: center;
-  	align-items: center;
-		/* text-align: center; */
-		max-width: 1024px;
-		grid-column: 1/2;
-		grid-row: 1/2		
-	}  
-</style>

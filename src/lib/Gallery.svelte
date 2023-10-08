@@ -93,7 +93,7 @@
   }	
 	:global(.img_abs) {
 		position: absolute;
-		top: 0;
+		top: 100px;
 		left: 0;
     width: 100vw;
     height: 90vh;

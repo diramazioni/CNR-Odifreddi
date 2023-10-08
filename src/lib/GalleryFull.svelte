@@ -92,8 +92,8 @@
 	}	
 	:global(.img_abs) {
 		position: absolute;
-		top: 0;
-		left: 0;
+		/* top: 0;
+		left: 0; */
 		/* height: 80vh; */
 		display: flex;
 		justify-content: center;
@@ -109,7 +109,7 @@
 	.img_cont > img {
 		justify-content: center;
 		align-items: center;		
-		height: 80vh;
+		/* height: 80vh; */
 		max-width: 100%;
 		max-height: 100%;
 		grid-column: 1/2;

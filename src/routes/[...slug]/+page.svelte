@@ -17,7 +17,7 @@ import Img2img  from '../galleries/img2img.svelte';
 import CCnet  from '../galleries/controlnet.svelte';
 import Lawsuits  from '../galleries/12.svelte';
 
-const interval = 5000;
+const interval = 7000;
 </script>
 <style>
     .container {
@@ -85,6 +85,16 @@ const interval = 5000;
 		<ul style="width: 100vh;">
 			<li class="fragment fade-right"> Opere derivate e copyrights</li>
 		</ul>
+		<Notes>	
+		<p>Chiedere al pubblico quanti hanno provata.</p>
+		<p>Quale di queste battute sono state generate dall'AI?</p>
+		<br>
+		<p>Vorrei darvi questa sera una spiegazione intuitiva, non tecnica, del funzionamento di questi algoritmi. 
+			Per questo farò dei paragoni col mondo biologico, niente formule promesso!</p>
+		<p>Mi scuso in anticipo con chi già conosce la materia, il mio sforzo questa sera è quello di semplificare, 
+			e fornire una spiegazione intuita, per fornire spunti di ragionamento e approfondimento</p>
+
+	</Notes>			
 	</Slide>
 	<Slide>
 		<h2>
@@ -124,11 +134,7 @@ const interval = 5000;
 			<p>Chiedere al pubblico quanti hanno provata.</p>
 			<p>Quale di queste battute sono state generate dall'AI?</p>
 			
-			<p>Vorrei darvi questa sera una spiegazione intuitiva, non tecnica, del funzionamento di questi algoritmi. 
-				Per questo farò dei paragoni col mondo biologico, niente formule promesso!</p>
-			<p>Mi scuso in anticipo con chi già conosce la materia, ma il mio sforzo è stato proprio quello di semplificare, 
-				per fornire spunti di ragionamento e approfondimento</p>
-	
+
 		</Notes>		
 
 	</Slide>
@@ -148,7 +154,7 @@ const interval = 5000;
 			</Notes>		
 		</Slide>
 		<Slide>
-			<DueUno interval={5000} />
+			<DueUno interval={10000} />
 			<Notes>
 	<p>Viene da chiedersi qual'è il sw cognitivo in funzione nel ns cervello che assorbe le idee, le sminuzza e le processa continuamente creando nuove idee</p>
 	<p>Per molti anni, gli scienziati hanno cercato di capire questi meccanismi della mente, in quanto era evidente che  
@@ -174,8 +180,8 @@ const interval = 5000;
 	<p>Executive attention network (sfera presente), ci permette di tenere più cose in testa contemporaneamente, una sorta di memoria di lavoro per creare strategie per raggiungere un obiettivo,
 		per non perdersi, o rifare il lavoro. Inoltre contribuisce ad inibire dare risposte ovvie, o scegliere strategie semplici che vengono in mente per prima.
 	</p>
-	<p>Imagination network (sfera futura): si attiva ogni volta che concentriamo l'attenzione su noi stessi, sui ns sogni ad occhi aperti, gli obiettivi futuri.
-		la parte pre-frontale, ci permette di simulare le possibilità degli eventi, di separare noi stessi dalla situazione presente. 
+	<p>Imagination network (sfera futura): si attiva ogni volta che concentriamo l'attenzione su noi stessi, sui ns sogni ad occhi aperti, gli obiettivi futuri.</p>
+	<p>La parte pre-frontale, ci permette di simulare le possibilità degli eventi, di separare noi stessi dalla situazione presente. 
 		Inoltre è anche il centro della compassione, dove proviamo a metterci in ascolto verso l'altro, e ad aprirci vs nuove idee</p>
 	<p>Background attention network (sfera passata): si attiva sottolineando le cose che sono interessanti per noi, e scartando quelle che non lo sono.
 		La ns mente inconsciamente filtra le info e le manda alle altre parti
@@ -184,7 +190,7 @@ const interval = 5000;
 </Slide>
 <Slide>
 	<h5>confirmation bias</h5>
-	<DueTre />
+	<DueTre interval={10000} />
 	<Notes>
 <p> Creatività richiede quindi grande conoscenza di quello che è successo prima e hanno fatto gli altri, e grande lungimiranza per pensare fuori dal gruppo.
 	Quello che possiamo creare è una evoluzione di quello che abbiamo già abbiamo assorbito
@@ -226,9 +232,10 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 		<Img src="/3/chip-scale5.png" height={"60vh"} class_=""/>
 
 		<Notes>
+		<p>Vediamo di mettere le cose nella giusta prospettiva</p>
 		<p>L'unità di base per il cervello biologico è il neurone. 
 			Il loro compito è quello di determinare l'impulso elettrico. 
-			Così è come il ns corpo percepisce i vari stimoli sensoriali per esempio. 
+			Così è come il ns corpo percepisce i vari stimoli sensoriali, visione, udito, tatto etc
 		</p>
 		<p>Ogni neurone può stabilire connessioni fino ad altri 1.000 neuroni tramite i dendriti formando una rete di 100 trilioni di connessioni reciproche</p>
 		<p>Nel cervelletto ne è concentrata più della metà, quindi la densità non è omogenea.</p>
@@ -248,17 +255,18 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 		<p>L'unità computazionale di base per i computer sono i transistor. 
 			Quest'anno, un processore di deep learning ha montato 2.6 trilioni di transistor in un singolo chip</p>
 		<p>L'unità computazionale di base per le reti neurali, anch'esso è chiamato neurone. 
-			Riceve input da qualche altro nodo o da fonti esterne e genera un output</p>
+			Anche'esso, come per il neurone biologico, riceve input da più nodi (pesi) manda output a uno o più nodi successivi</p>
 	</Notes>
 </Slide>		
 <Slide>
 	<h2>Creatività per l'AI</h2>
 	<Img src="/3/analogie.png" width={"80vh"} />
 	<Notes>
-		<p>In un certo qual modo i meccanismi creativi dell'AI sono assimilabili a quelli umani, (non a caso visto che per decenni le scienze cognitive ci hanno aiutato a modellare quello artificiale)</p>
+		<p>In un certo qual modo i meccanismi creativi dell'AI sono assimilabili a quelli umani,
+		(non a caso visto che per decenni le scienze cognitive ci hanno aiutato a modellare i modelli artificiali)</p>
 		<p>Catturare parole chiave (prompt/filter) e cosa è associato ad esso (train), istruire un modello mentale (plan), e immaginare qualcosa di nuovo (future/inference)</p>
 		<p>I bambini sentono tante volte la parola cane e alla fine imparano e lo associano all'animale, o meglio imparano a riconoscere le caratteristiche distintive che lo rendono cane e non un altro animale</p>
-		<p>Anche gli altri animali imparano, e come per le persone, più abbondanti sono gli stimoli e maggiore sarà lo sviluppo della corteccia cerebrale, tuttavia le connessioni e le attivazioni del cervello umano sono molto più estese.</p>
+		<!-- <p>Anche gli altri animali imparano, e come per le persone, più abbondanti sono gli stimoli e maggiore sarà lo sviluppo della corteccia cerebrale, tuttavia le connessioni e le attivazioni del cervello umano sono molto più estese.</p> -->
 		<p>Gli algoritmi di ML richiedono migliaia a volte anche milioni di immagini per un training di base, e poche decine per affinare il modello (finetuning), come per noi una volta imparata una cosa simile, basta poco per ripassarla</p>
 		
 		</Notes>
@@ -315,17 +323,16 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 	</Slide>
 	<Slide>
 		<h2> Cosa "impara" la rete neurale? </h2>
-		<Frag>Sezioniamo un neurone</Frag>
-		<!-- <a style="font-size: medium; margin:0;" href="https://towardsdatascience.com/visual-interpretability-for-convolutional-neural-networks-2453856210ce">
+		<a style="font-size: medium; margin:0;" href="https://towardsdatascience.com/visual-interpretability-for-convolutional-neural-networks-2453856210ce">
 			Visual Interpretability for Convolutional Neural Networks
-		</a> -->
+		</a>
 		<Quattro {interval} />
 
 		<Notes>
-		<p>Questa è una visualizzazione degli strati interni di una CNN</p>
+		<p>Questa è una visualizzazione degli strati interni di una deep NN  e ci fa intuire come lavorano i singoli neuroni</p>
 		<p>Possiamo vederli come dei filtri ("edge-detector" per chi sa cosa sono)</p>
-		<p>Dato un determinato input alcuni filtri produrranno un output maggiore degli altri.</p>
-		<p>Osservando i filtri possiamo farci una idea che pattern ogni strato ha imparato ad estrarre dall'input</p>
+		<p>Dato un determinata immagine di input, applicato il filtro del nodo uscirà un output (peso) amplificato o attenuato.</p>
+		<p>In sostanza, osservando i filtri, possiamo farci una idea che pattern ogni strato, ha imparato ad estrarre dall'input</p>
 		</Notes>
 	</Slide>		
 	<Slide>
@@ -392,19 +399,18 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 </Slide>
 <Slide>
 	<h2>Text to image </h2>
-	<Text2img  interval={15000}/>
+	<Text2img  interval={9000}/>
 </Slide>
 <Slide>
 	<h2>Image to Image </h2>
-	<Img2img  interval={15000}/>
+	<Img2img  interval={9000}/>
 </Slide>
 <Slide>
 	<h2>In-painting </h2>
-	<Img2img  interval={15000}/>
 </Slide>
 <Slide>
 	<h2>Control-net </h2>
-	<CCnet interval={15000}/>
+	<CCnet interval={9000}/>
 </Slide>
 <!-- <Slide>
 	<h2>IPadapter-plus</h2>
@@ -440,7 +446,7 @@ Questo aspetto è particolarmente problematico oggi a causa dell'effetto amplifi
 
 	<Slide>
 		<h2>Risultati ottenuti col training </h2>
-		<SDtrain {interval}/>
+		<SDtrain interval={3000}/>
 	</Slide>
 	<Slide>
 		<h2>Risultati ottenuti con LoRa + training </h2>
